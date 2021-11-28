@@ -11,24 +11,123 @@
     <meta content="Hi, I'm Rashmi.This is my profile" name="Description">
     <meta content="width=device-width initial-scale=1" name="viewport">
     <meta content="green" name="theme-color">
+
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+    <style>
+
+        * {
+            font-family: 'Quicksand';
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        ul {
+            list-style-type: none;
+            display: flex;
+
+        }
+
+        li.horizontal {
+            float: right;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+        }
+
+
+        a.menu {
+            padding: 14px 15px;
+            font-size: 18px;
+        }
+
+        a.menu:hover {
+            font-weight: bold;
+        }
+
+        a.menu:hover {
+            font-weight: bold;
+        }
+
+        #menuBar {
+
+
+            right: 20px;
+            top: 30px;
+            position: fixed;
+        }
+
+        body{
+            padding-top: 85px;
+            width: 100%;
+        }
+        #header {
+            background-color: #E1E1E3;
+            height: 75px;
+            color: black;
+            position: fixed;
+            top: 0;
+            width: 100%
+
+        }
+
+        #home{
+            position: absolute;
+            top: 75px;
+            width: 100%;
+        }
+
+        #intro {
+
+            background-color: #023246;
+            height: 550px;
+        }
+
+        h1{
+            color: white;
+            font-weight: bold;
+            font-size: 85px;
+        }
+
+        h2{
+            color: black;
+            font-weight: bold;
+            font-size: 60px;
+            padding: 25px 25px 25px 25px;
+        }
+
+    </style>
 </head>
 
 
 <body>
 
-<header>
-    <nav>
+
+<header id="header">
+    <nav id="menuBar">
+
         <ul>
-            <li class=""><a href="">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Education</a></li>
-            <li><a href="">Skills</a></li>
-            <li><a href="">Projects</a></li>
-            <li><a href="">Gallery</a></li>
-            <li><a href="">Contact</a></li>
+            <li><a class="menu" href="#home"
+            >Home</a>
+            </li>
+            <li><a class="menu" href="#about">About</a>
+            </li>
+            <li><a class="menu" href="#education">Education</a>
+            </li>
+            <li><a class="menu" href="#skills">Skills</a>
+            </li>
+            <li><a class="menu" href="#projects">Projects</a>
+            </li>
+            <li><a class="menu" href="#gallery">Gallery</a>
+            </li>
+            <li><a class="menu" href="#contact">Contact</a>
+            </li>
 
         </ul>
-
 
     </nav>
 </header>
@@ -37,39 +136,58 @@
 
     <!-- Start Home section-->
     <section id="home">
-        <section>
-            <section>
-                <h1>Hi, I'm Rashmi Liyanage</h1>
-                <h3>I'm a Software Engineer</h3>
+
+        <section id="intro">
+            <section >
+                <h1 style="top: 220px; left: 25px">Hi, I'm Rashmi
+                    Liyanage</h1>
+                    <h3 style="color:white;  font-size: 62px; font-weight: normal; position:absolute; top:300px; left: 25px">
+                        I'm a Software
+                        Engineer</h3>
             </section>
-            <img alt="Picture of Rashmi Liyanage" height="305" src="assets/images/myPic.png" width="307">
+            <img alt="Picture of Rashmi Liyanage" height="305" src="assets/images/myPic.png"
+                 style="position:absolute; top:150px; right: 100px; border:9px solid #BABABA;border-radius:1000px; "
+                 width="307">
 
         </section>
 
-        <address>
+        <address style="background-color:#94B2BF;  height: 95px">
+            <ul style="left: 25px; top:650px; position: absolute; cursor: pointer">
+                <li class="horizontal">
+                    <a href="https://www.linkedin.com/in/rashmi-liyanage-690566225?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BjbYqNnvdRZSLFHG1TLBFGg%3D%3D"
+                       target="_blank"><img
+                            alt="linkedin icon" height="50" src="assets/icon/linkedin.png" width="50"></a></li>
+                <li class="horizontal"><a href="https://twitter.com/i/flow/login" target="_blank"><img
+                        alt="twitter icon" height="50"
+                        src="assets/icon/twitter-sign.png"
+                        width="50"></a></li>
+                <li class="horizontal"><a href="https://github.com/rashidya" target="_blank"><img alt="git hub icon"
+                                                                                                  height="50"
+                                                                                                  src="assets/icon/github.png"
+                                                                                                  width="50"></a></li>
+                <li class="horizontal"><a href="https://www.instagram.com/" target="_blank"><img alt="instagram icon"
+                                                                                                 height="50"
+                                                                                                 src="assets/icon/instagram.png"
+                                                                                                 width="50"></a> <a
+                        href="https://www.facebook.com/" target="_blank"><img alt="facebook icon" height="50"
+                                                                              src="assets/icon/facebook.png"
+                                                                              width="50"></a></li>
 
-            <a href="https://www.linkedin.com/in/rashmi-liyanage-690566225?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BjbYqNnvdRZSLFHG1TLBFGg%3D%3D"
-               target="_blank"><img
-                    alt="linkedin icon" height="50" src="assets/icon/linkedin.png" width="50"></a>
-            <a href="https://twitter.com/i/flow/login" target="_blank"><img alt="twitter icon" height="50"
-                                                                            src="assets/icon/twitter-sign.png"
-                                                                            width="50"></a>
-            <a href="https://github.com/rashidya" target="_blank"><img alt="git hub icon" height="50"
-                                                                       src="assets/icon/github.png"
-                                                                       width="50"></a>
-            <a href="https://www.facebook.com/" target="_blank"><img alt="facebook icon" height="50"
-                                                                     src="assets/icon/facebook.png"
-                                                                     width="50"></a>
-            <a href="https://www.instagram.com/" target="_blank"><img alt="instagram icon" height="50"
-                                                                      src="assets/icon/instagram.png" width="50"></a>
 
+            </ul>
 
-            <a href="https://mail.google.com/" target="_blank"><img alt="gmail icon" height="50"
-                                                                    src="assets/icon/gmail-logo.png" width="50">rashidya123@gmail.com</a>
+            <ul style="right: 25px; top:650px; position: absolute; cursor: pointer">
+                <li class="horizontal"><a href="https://mail.google.com/" target="_blank"><img alt="gmail icon"
+                                                                                               height="50"
+                                                                                               src="assets/icon/gmail-logo.png"
+                                                                                               width="50">rashidya123@gmail.com</a>
+                </li>
+                <li class="horizontal"><a href="tel:+94771167897" target="_blank"><img alt="whtasapp icon" height="50"
+                                                                                       src="assets/icon/whatsapp.png"
+                                                                                       width="50">+94771167897</a>
+                </li>
+            </ul>
 
-
-            <a href="tel:+94771167897" target="_blank"><img alt="whtasapp icon" height="50"
-                                                                     src="assets/icon/whatsapp.png" width="50">+94771167897</a>
 
         </address>
 
@@ -77,15 +195,14 @@
     <!-- End Home section-->
 
     <!--Start About section-->
-    <section id="about">
-        <h1>About</h1>
-
+    <section id="about" style="background-color:white; height: 645px; position:relative; top:720px; width: 100%" >
+        <h2>About</h2>
         <img alt="Girl with computer" height="480" src="assets/images/female-developer-vector.jpg" width="593">
         <!--Start Info list -->
         <aside>
-            <button><a href="assets/docs/usermanual.pdf" download="Rashmi Liyanage-CV.pdf">Download CV</a></button>
+            <button><a download="Rashmi Liyanage-CV.pdf" href="assets/docs/usermanual.pdf">Download CV</a></button>
 
-            <ul>
+            <ul style="list-style: none; position:absolute; top:830px; right:450px;">
                 <li><img alt="user icon" height="47" src="assets/icon/user.png" width="44">G.L.Rashmi Navodya</li>
                 <li><img alt="age icon" height="52" src="assets/icon/age-group.png" width="51"> 21 Years Old</li>
                 <li><img alt="location icon" height="55" src="assets/icon/location.png" width="51"> Galle,Southern
@@ -95,7 +212,7 @@
                     Engineer
                 </li>
                 <li><img alt="motivation icon" height="55" src="assets/icon/motivation.png" width="51"> <abbr
-                        title="Having an interest in learning things">Inquisitive</abbr> ,
+                        title="Having an interest in learning things" style="text-decoration:none ">Inquisitive</abbr> ,
                     Active, Trustworthy
                 </li>
             </ul>
@@ -105,15 +222,16 @@
     <!--End About section-->
 
     <!--Start Eductaion section-->
-    <section id="education">
-        <h1>Education</h1>
+    <section id="education" style="background-color:#E9E9E9; height: 645px " >
+
+        <h2>Education</h2>
         <img alt="education progress" src="assets/images/education.PNG">
     </section>
     <!--End Eductaion section-->
 
     <!--Start Skills section-->
-    <section id="skills">
-        <h1>Skills</h1>
+    <section id="skills" style="background-color: white; height: 645px">
+        <h2>Skills</h2>
 
         <h3>Languages</h3>
 
@@ -124,29 +242,31 @@
 
 
     <!--Start Projects section-->
-    <section id="projects">
-        <h1>Projects</h1>
+    <section id="projects" style="background-color:#EEEEEE; height: 645px">
+        <h2>Projects</h2>
     </section>
     <!--End Projects section-->
 
     <!--Start Gallery section -->
-    <section id="gallery">
-        <h1>Gallery</h1>
+    <section id="gallery" style="background-color: white; height: 645px">
+        <h2>Gallery</h2>
     </section>
     <!--End Gallery section -->
 
 </main>
 
-<footer id="contact">
+<footer id="contact" style="background-color:#BABABA; height: 600px" >
     <h1>Contact</h1>
     <address>
         <ul>
             <li><img alt="location icon" height="51" src="assets/icon/location.png" width="55">Uddumullawatta,Poddala,Galle,Srilanka.
             </li>
             <br>
-            <li><a href="mailto:rashiday123@gmail.com"><img alt="mail icon" height="51" src="assets/icon/gmail-logo.png" width="55">rashiday123@gmail.com</a></li>
+            <li><a href="mailto:rashiday123@gmail.com"><img alt="mail icon" height="51" src="assets/icon/gmail-logo.png"
+                                                            width="55">rashiday123@gmail.com</a></li>
             <br>
-            <li><a href="tel:+94771167897"><img alt="whatsapp icon" height="51" src="assets/icon/whatsapp.png" width="55">+94771167897</a></li>
+            <li><a href="tel:+94771167897"><img alt="whatsapp icon" height="51" src="assets/icon/whatsapp.png"
+                                                width="55">+94771167897</a></li>
 
         </ul>
 
@@ -174,22 +294,22 @@
     </address>
 
     <section>
-        <form>
+        <form action="https://mail.google.com/">
             <label>Name</label><br>
-            <input type="text" id="name" name="name"><br>
+            <input id="name" type="text"><br>
             <label for="email">Email</label><br>
-            <input type="text" id="email" name="email"><br>
+            <input id="email" type="text"><br>
             <label for="subject">Subject</label><br>
-            <input type="text" id="subject" name="subject"><br>
+            <input id="subject" type="text"><br>
             <label for="message">Message</label><br>
-            <input type="text" id="message" name="message"><br>
+            <input id="message" type="text"><br>
+
+            <button>send</button>
+
         </form>
 
 
-        <button><a href="mailto:rashiday123@gmail.com">send</a></button>
-
     </section>
-
 
 
 </footer>
