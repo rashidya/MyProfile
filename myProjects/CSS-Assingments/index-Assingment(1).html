@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta content="width=device-width initial-scale=1" name="viewport">
+    <link href="assets/normalize.css" rel="stylesheet">
+    <style>
+        body > section {
+            z-index: 1;
+            position: absolute;
+            height: 50vh;
+            width: 50vw;
+        }
+
+        #section1 {
+            background-color: red;
+            top: 0;
+            left: 0;
+        }
+
+        #section2 {
+            background-color: green;
+            top: 0;
+            right: 0;
+        }
+
+        #section3 {
+            background-color: orange;
+            bottom: 0;
+            left: 0;
+        }
+
+        #section4 {
+            background-color: deeppink;
+            bottom: 0;
+            right: 0;
+        }
+
+        div {
+            z-index: 2;
+            position: absolute;
+            background-color: white;
+        }
+
+        div.coner {
+
+            height: 25vh;
+            width: 25vh;
+
+        }
+
+        div.coner:nth-child(5) {
+            border-bottom-right-radius: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        div.coner:nth-child(6) {
+            border-bottom-left-radius: 100%;
+            top: 0;
+            right: 0;
+        }
+
+        div.coner:nth-child(7) {
+            border-top-right-radius: 100%;
+            bottom: 0;
+            left: 0;
+        }
+
+        div.coner:nth-child(8) {
+            border-top-left-radius: 100%;
+            bottom: 0;
+            right: 0;
+        }
+
+
+        div.semi {
+
+            height: 12.5vh;
+            width: 12.5vh;
+
+        }
+
+        div.semi:nth-child(9) {
+            border-bottom-right-radius: 100%;
+            top: 0;
+            left: 50vw;
+        }
+
+        div.semi:nth-child(10) {
+            border-bottom-left-radius: 100%;
+            top: 0;
+            right: 50vw;
+        }
+
+        div.semi:nth-child(11) {
+            border-top-right-radius: 100%;
+            bottom: 0;
+            left: 50vw;
+        }
+
+        div.semi:nth-child(12) {
+            border-top-left-radius: 100%;
+            bottom: 0;
+            right: 50vw;
+        }
+
+
+        section>div.square,section>div.circle,div.Middlecircle,div.Middlesquare{
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            margin: auto;
+        }
+
+
+        section>div.square {
+            background-color: red;
+            border-radius: 0;
+            height: 12.5vh;
+            width: 12.5vh;
+
+        }
+
+        section>div.circle {
+            background-color: white;
+            border-radius: 100%;
+            height: 25vh;
+            width: 25vh;
+
+        }
+
+
+        div.Middlesquare {
+            height: 25vh;
+            width: 25vh;
+            background-color: white;
+
+
+        }
+
+        div.Middlecircle {
+            border-radius: 100%;
+            height: 12.5vh;
+            width: 12.5vh;
+            background-color: red;
+
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+
+<section id="section1"><div class="circle"></div><div class="square"></div></section>
+<section id="section2"><div class="circle"></div><div class="square"></div></section>
+<section id="section3"><div class="circle"></div><div class="square"></div></section>
+<section id="section4"><div class="circle"></div><div class="square"></div></section>
+
+
+<div class="coner"></div>
+<div class="coner"></div>
+<div class="coner"></div>
+<div class="coner"></div>
+
+
+<div class="semi"></div>
+<div class="semi"></div>
+<div class="semi"></div>
+<div class="semi"></div>
+
+<div class="Middlesquare"></div>
+
+<div class="Middlecircle"></div>
+
+
+</body>
+</html>

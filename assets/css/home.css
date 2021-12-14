@@ -1,0 +1,53 @@
+#home > section {
+    background-color: #023246;
+    height: 74vh;
+    position: relative;
+}
+
+#home > section > img {
+    height: 45vh;
+    border-radius: 45vh;
+    border: 1vh solid #E1E1E3;
+    position: absolute;
+    right: 10vh;
+    top:13vh;
+}
+
+#home>section>h1{
+    position: absolute;
+    left: 2vh;
+    top:18vh;
+}
+
+#home>section>h2{
+    position: absolute;
+    left: 2vh;
+    top: 32vh;
+}
+
+#home > address {
+    background-color: #94B2BF;
+    height: 12vh;
+    position: relative;
+}
+#home>address>ul{
+    position: relative;
+    top:2vh;
+    left: 2vh;
+}
+
+
+#home>address>aside{
+    position: absolute;
+    top: 2vh;
+    right: 2vh;
+}
+
+#home a{
+    text-decoration: none;
+    color: black;
+    padding: 4px;
+    font-size: 19px;
+    font-weight: bold;
+    font-style: normal;
+}
