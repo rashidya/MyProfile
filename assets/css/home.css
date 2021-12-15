@@ -1,3 +1,4 @@
+
 #home > section {
     background-color: #023246;
     height: 74vh;
@@ -27,7 +28,7 @@
 
 #home > address {
     background-color: #94B2BF;
-    height: 12vh;
+    height: 14vh;
     position: relative;
 }
 #home>address>ul{
