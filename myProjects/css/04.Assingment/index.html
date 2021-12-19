@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case No-04</title>
+    <link href="assets/normalize.css" rel="stylesheet">
+    <meta content="width=device-width initial-scale=1" name="viewport">
+    <style>
+        body > section {
+            position: relative;
+            font-weight: bold;
+
+        }
+
+        .header {
+            z-index: 2;
+            position: sticky;
+            top:0;
+            font-size: 30px;
+            color: white;
+            height: 10vh;
+        }
+
+        .body {
+            position: relative;
+            font-size: 120px;
+            height: 90vh;
+        }
+
+        section span{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        body > section:first-child > section.header {
+            background-color: red;
+        }
+
+        body > section:nth-child(2) > section.header {
+            background-color: darkblue;
+        }
+
+        body > section:nth-child(3) > section.header {
+            background-color: black;
+        }
+
+        body > section:nth-child(4) > section.header {
+            background-color: darkred;
+        }
+        body > section:first-child > section.body {
+            background-color: white;
+        }
+
+        body > section:nth-child(2) > section.body {
+            background-color: lightskyblue;
+        }
+
+        body > section:nth-child(3) > section.body {
+            background-color: darkslategrey;
+        }
+
+        body > section:nth-child(4) > section.body {
+            background-color: indianred;
+        }
+
+
+
+    </style>
+
+
+</head>
+
+<body>
+
+<section>
+    <section class="header">Card 1</section>
+    <section class="body"><span>Hello</span></section>
+</section>
+
+<section>
+    <section class="header">Card 2</section>
+    <section class="body"><span>How</span></section>
+</section>
+
+<section>
+    <section class="header">Card 3</section>
+    <section class="body"><span>Are</span></section>
+</section>
+
+<section>
+    <section class="header">card 4</section>
+    <section class="body"><span>You?</span></section>
+</section>
+
+
+</body>
+</html>
