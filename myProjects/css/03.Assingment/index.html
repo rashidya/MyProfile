@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case No-03</title>
+    <link href="assets/normalize.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <link href="assets/nnormalize.css" rel="stylesheet">
+    <style>
+        /*whole content*/
+        body > section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+
+        /*outer circles*/
+
+        body>section>section{
+            position: fixed;
+            border-radius: 100%;
+            left: 49.95%;
+            top: 51.2%;
+            z-index: 10;
+            transform: translate(-50%, -50%);
+        }
+        body > section > section:first-child {
+            border: 20px solid grey;
+            width: 300px;
+            height: 300px;
+        }
+
+        body > section > section:nth-child(2) {
+            border: 20px solid red;
+            width: 260px;
+            height: 260px;
+        }
+
+        /*inner circles*/
+
+        body>section>div{
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            border-radius: 100%;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            top: 0;
+            margin: auto;
+        }
+        body > section:first-child > div {
+            background-color: rebeccapurple;
+        }
+
+        body > section:nth-child(2) > div {
+            background-color: dodgerblue;
+        }
+
+        body > section:nth-child(3) > div {
+            background-color: lightcoral;
+        }
+
+        span{
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            margin: auto;
+        }
+
+    </style>
+</head>
+<body>
+<section>
+    <section></section>
+    <section></section>
+    <div>
+        <span>Hello</span>
+    </div>
+</section>
+<section>
+    <div>
+        <span>Welcome To</span>
+    </div>
+</section>
+<section>
+    <div>
+        <span>Institute Of Software Engineering</span>
+    </div>
+</section>
+</body>
+</html>
