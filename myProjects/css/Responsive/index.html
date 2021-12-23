@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" >
+    <title>Title</title>
+
+
+    <style>
+
+
+        * {
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            padding: 10px;
+            font-family: Arial;
+            font-size: 1em;
+            font-weight: bolder;
+        }
+
+        header {
+            position: relative;
+            background-color: white;
+            top: 0;
+
+        }
+
+        header > img {
+            width: 15vw;
+            padding: 12px;
+        }
+
+        header li, main > section li {
+
+            display: inline;
+
+        }
+
+        header > nav {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 25px;
+        }
+
+        main {
+            position: relative;
+        }
+
+        main > aside {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background-color: purple;
+            width: 20vw;
+        }
+
+        main > aside > nav {
+            color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+            padding-left: 20px;
+        }
+
+        main ul {
+            padding-inline-start: 0px;
+
+        }
+
+        main > section {
+            width: 80vw;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            padding-left: 20vw;
+            border-top: 5px solid black;
+        }
+
+        main img {
+            width: 25.6vw;
+            border-top: 2px solid red;
+
+        }
+
+        main>section img:first-child {
+            border-right: 2px solid green;
+            border-bottom: 2px solid green;
+            border-left: 2px solid red;
+            margin-left: 5px;
+            margin-right: 0;
+        }
+
+        main>section img:nth-child(2) {
+
+            border-bottom: 2px solid green;
+
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        main>section img:nth-child(3) {
+            border-right: 2px solid red;
+            border-bottom: 2px solid green;
+            border-left: 2px solid green;
+            margin-right: 5px;
+            margin-left: 0;
+        }
+
+ /*       main>section>section:first-child{
+            height: 30vh;
+            width: 80vw;
+            display: flex;
+
+        }
+
+        main>section>section:first-child>img{
+            flex-grow: 1;
+            border: 2px solid green;
+
+
+
+        }*/
+        p {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        main > section > section {
+            padding:5px;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            height: 7vh;
+            position: relative;
+            background-color: slategray;
+
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <img alt="ijse logo" src="assets/ijse.png">
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>Service</li>
+            <li>Contact us</li>
+            <li>About us</li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <aside>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Service</li>
+                <li>Contact us</li>
+                <li>About us</li>
+            </ul>
+        </nav>
+    </aside>
+
+    <section>
+        <section>
+            <img alt="pic of key board" src="assets/data-entry-typing-web-research.jpg"><img alt="pic of key board" src="assets/data-entry-typing-web-research.jpg"><img alt="pic of key board" src="assets/data-entry-typing-web-research.jpg">
+        </section>
+
+        <section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque consequuntur, culpa debitis dolorem
+                dolorum ea enim ex laudantium, nihil nobis odit omnis quaerat, quo quos reprehenderit sunt vel
+                vitae?</p>
+            <p>Atque cum doloribus eaque magnam magni numquam possimus praesentium provident quaerat quo. A cumque
+                deleniti
+                dicta dolor dolorum enim explicabo libero magni minima, modi, mollitia pariatur suscipit temporibus,
+                veritatis voluptatum?</p>
+            <p>Aspernatur eos est expedita maiores nemo sit. Adipisci asperiores aspernatur consequuntur, corporis
+                cumque ea
+                eius enim ex facilis in modi molestias officiis placeat quos reiciendis sequi sunt vel, velit
+                voluptatem!</p>
+            <p>Enim expedita fugit ipsa optio tempora vitae voluptas. Ea, non, sed! Corporis deserunt dolore ea eos ex
+                in
+                incidunt labore reiciendis sapiente similique. Dolor eligendi facere facilis perspiciatis suscipit
+                vero.</p>
+            <p>Ad, alias amet atque dolorem, doloremque eaque explicabo impedit ipsam iure obcaecati, quam quod
+                veritatis
+                voluptates? Aliquam blanditiis dolor dolores exercitationem fugiat maxime omnis perspiciatis praesentium
+                quam, quibusdam, similique tempore!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque consequuntur, culpa debitis dolorem
+                dolorum ea enim ex laudantium, nihil nobis odit omnis quaerat, quo quos reprehenderit sunt vel
+                vitae?</p>
+            <p>Atque cum doloribus eaque magnam magni numquam possimus praesentium provident quaerat quo. A cumque
+                deleniti
+                dicta dolor dolorum enim explicabo libero magni minima, modi, mollitia pariatur suscipit temporibus,
+                veritatis voluptatum?</p>
+            <p>Aspernatur eos est expedita maiores nemo sit. Adipisci asperiores aspernatur consequuntur, corporis
+                cumque ea
+                eius enim ex facilis in modi molestias officiis placeat quos reiciendis sequi sunt vel, velit
+                voluptatem!</p>
+            <p>Enim expedita fugit ipsa optio tempora vitae voluptas. Ea, non, sed! Corporis deserunt dolore ea eos ex
+                in
+                incidunt labore reiciendis sapiente similique. Dolor eligendi facere facilis perspiciatis suscipit
+                vero.</p>
+            <p>Ad, alias amet atque dolorem, doloremque eaque explicabo impedit ipsam iure obcaecati, quam quod
+                veritatis
+                voluptates? Aliquam blanditiis dolor dolores exercitationem fugiat maxime omnis perspiciatis praesentium
+                quam, quibusdam, similique tempore!</p>
+            <p>Enim expedita fugit ipsa optio tempora vitae voluptas. Ea, non, sed! Corporis deserunt dolore ea eos ex
+                in
+                incidunt labore reiciendis sapiente similique. Dolor eligendi facere facilis perspiciatis suscipit
+                vero.</p>
+            <p>Ad, alias amet atque dolorem, doloremque eaque explicabo impedit ipsam iure obcaecati, quam quod
+                veritatis
+                voluptates? Aliquam blanditiis dolor dolores exercitationem fugiat maxime omnis perspiciatis praesentium
+                quam, quibusdam, similique tempore!</p>
+        </section>
+
+
+    </section>
+</main>
+
+<footer><br> Developed by IJSE</footer>
+</body>
+</html>
