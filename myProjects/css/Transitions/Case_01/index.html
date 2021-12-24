@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case 01</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        section {
+            height: 500px;
+            width: 200px;
+            top: 80px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            right: 150px;
+
+
+        }
+
+        div {
+
+            position: relative;
+            background-color: mediumpurple;
+            height: 50px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            box-shadow: 4px 4px grey;
+            transition: all 2s;
+            left: 0;
+        }
+
+        div:hover {
+            left: 150px;
+            box-shadow: none;
+            transition: all 2s;
+        }
+
+        img {
+            position: absolute;
+            top: 20%;
+            right: 4%;
+            height: 30px;
+        }
+
+        h3 {
+            position: absolute;
+            top: 20%;
+            left: 4%;
+        }
+
+    </style>
+</head>
+<body>
+<section>
+    <div><h3>Home</h3><img src="assests/home.png"></div>
+    <div><h3>Services</h3><img src="assests/global-services.png"></div>
+    <div><h3>Gallery</h3><img src="assests/gallery.png"></div>
+    <div><h3>About</h3><img src="assests/information.png"></div>
+    <div><h3>Contact</h3><img src="assests/notebook-of-contacts.png"></div>
+
+
+</section>
+</body>
+</html>
