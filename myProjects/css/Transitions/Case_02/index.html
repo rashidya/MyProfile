@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case 02</title>
+    <style>
+        section{
+            position: absolute;
+            height: 400px;
+            width: 400px;
+            border-radius: 100%;
+            border: 20px solid darkgray;
+            background: grey 50%;
+            border-top: 20px solid darkslateblue;
+            transform:rotate(0deg);
+
+        }
+
+        h1{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            transform:rotate(360deg);
+
+        }
+        section,h1{
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        section:hover h1{
+            transform:rotate(0deg);
+            transition: transform 5s;
+        }
+        section:hover{
+            transform:rotate(360deg);
+            transition: transform 5s;
+        }
+
+    </style>
+</head>
+<body>
+<section>
+    <h1>RWAD</h1>
+</section>
+</body>
+</html>
