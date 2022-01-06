@@ -11,6 +11,7 @@
 
 #home > address {
     background-color:#2b2c2f;
+    background-color: #232323;
     height: 10vh;
     position: relative;
 }
@@ -45,12 +46,12 @@ i{
     font-weight: bolder;
     cursor: pointer;
     font-style: normal;
-    color: #4c4c4c;
+    color: #717171;
 
 }
 
 #home a:hover,#home li:hover{
-    color: #cdcdcd;
+    color: #c4c4c4;
     text-decoration: underline;
 }
 
