@@ -45,12 +45,12 @@ i{
     font-weight: bolder;
     cursor: pointer;
     font-style: normal;
-    color:#cdcdcd;
+    color: #4c4c4c;
 
 }
 
 #home a:hover,#home li:hover{
-    color: #ffffff;
+    color: #cdcdcd;
     text-decoration: underline;
 }
 
