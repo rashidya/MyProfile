@@ -13,7 +13,6 @@ header>nav{
     right: 2%;
 }
 header li{
-
     font-size: 1.2em;
 }
 
@@ -21,20 +20,14 @@ header a{
     color: #cbcbcb;
 }
 header ul{
-
     width: 38vw;
     display: flex;
     justify-content: space-between;
 }
 
-header a:hover{
+header a:hover {
     color: white;
     font-weight: bolder;
     cursor: pointer;
 
 }
-
-/*header a:v{
-    color: white;
-    font-weight: bolder;
-}*/

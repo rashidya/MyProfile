@@ -1,12 +1,12 @@
 
 
 #home > section {
-  /*  background-color: #023246;*/
+
     background-color: black;
     height: 80vh;
     width: 100%;
     position: relative;
-    background-image: url("f");
+
 }
 
 #home > address {
@@ -58,7 +58,7 @@ i{
     color: white;
     position: absolute;
     left: 5%;
-    z-index: 2;
+
 }
 #home h1{
     font-size: 5em;

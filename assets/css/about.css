@@ -1,0 +1,42 @@
+#about>img{
+    position: absolute;
+    top: 22%;
+    left: 5%;
+    width: 40%;
+}
+
+#about li{
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+#about>ul{
+    height: 55vh;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    position: absolute;
+    top: 28%;
+}
+
+
+#about>ul:nth-child(4){
+    right: 41%;
+}
+#about ul:nth-child(5){
+    right: 8%;
+}
+
+#about>button{
+    position:absolute;
+    top:6%;
+    right:2%;
+    color: white;
+    font-weight: bolder;
+    height: 6vh;
+    width: 10vw;
+    background-color: #656565;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
