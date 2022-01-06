@@ -1,54 +1,98 @@
 
+
 #home > section {
-    background-color: #023246;
-    height: 74vh;
+  /*  background-color: #023246;*/
+    background-color: black;
+    height: 80vh;
+    width: 100%;
     position: relative;
-}
-
-#home > section > img {
-    height: 45vh;
-    border-radius: 45vh;
-    border: 1vh solid #E1E1E3;
-    position: absolute;
-    right: 10vh;
-    top:13vh;
-}
-
-#home>section>h1{
-    position: absolute;
-    left: 2vh;
-    top:18vh;
-}
-
-#home>section>h2{
-    position: absolute;
-    left: 2vh;
-    top: 32vh;
+    background-image: url("f");
 }
 
 #home > address {
-    background-color: #94B2BF;
-    height: 14vh;
+    background-color:#2b2c2f;
+    height: 10vh;
     position: relative;
 }
+
 #home>address>ul{
-    position: relative;
-    top:2vh;
-    left: 2vh;
+    width: 18vw;
+    left: 2%;
 }
 
+i{
+    font-size: 3em;
+}
 
-#home>address>aside{
+#home aside, #home ul{
+    display: flex;
+    justify-content: space-between;
     position: absolute;
-    top: 2vh;
-    right: 2vh;
+    bottom: 10%;
+
+}
+#home aside{
+    width: 28vw;
+    right: 2%;
 }
 
-#home a{
-    text-decoration: none;
-    color: black;
-    padding: 4px;
-    font-size: 19px;
-    font-weight: bold;
+#home p{
+    position: relative;
+    top: 30%;
+}
+
+#home a, #home li{
+    font-weight: bolder;
+    cursor: pointer;
     font-style: normal;
+    color:#cdcdcd;
+
+}
+
+#home a:hover,#home li:hover{
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+#home h1,#home h2{
+    color: white;
+    position: absolute;
+    left: 5%;
+    z-index: 2;
+}
+#home h1{
+    font-size: 5em;
+   font-weight: bolder;
+
+    top:25%;
+}
+
+#home h2{
+   font-size: 3em;
+    font-weight: lighter;
+    top: 42%;
+}
+
+#proPic{
+    position: absolute;
+    right: 0;
+    top: -5%;
+    width: 35%;
+  }
+
+#home button:hover{
+    background-color: #cdcdcd;
+    color: black;
+    border: 2px solid #ffffff;
+}
+#home button{
+    position: absolute;
+    background-color: black;
+    width:8vw;
+    height: 6vh;
+    color: white;
+    border-radius: 8px;
+    border: 1px solid #acacac;
+    left: 5%;
+    top: 53%;
 }
