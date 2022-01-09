@@ -24,6 +24,7 @@
     <link href="assets/css/skills.css" rel="stylesheet">
     <link href="assets/css/projects.css" rel="stylesheet">
     <link href="assets/css/gallery.css" rel="stylesheet">
+    <link href="assets/css/contact.css" rel="stylesheet">
 
 </head>
 
@@ -39,7 +40,7 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#gallery">Gallery</a></li>
-            <li><a>Contact</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 </header>
@@ -203,7 +204,7 @@
                 <li>
                     <a href="https://en.wikipedia.org/wiki/IntelliJ_IDEA" target="_blank">
                         <figure>
-                            <img alt="icon"  src="assets/icons/intellijIdea.png">
+                            <img alt="icon" src="assets/icons/intellijIdea.png">
                             <figcaption>IntelliJ IDEA</figcaption>
                         </figure>
                     </a>
@@ -211,7 +212,7 @@
                 <li>
                     <a href="https://en.wikipedia.org/wiki/NetBeans" target="_blank">
                         <figure>
-                            <img alt="icon"  src="assets/icons/netbeans.png">
+                            <img alt="icon" src="assets/icons/netbeans.png">
                             <figcaption>NetBeans</figcaption>
                         </figure>
                     </a>
@@ -219,7 +220,7 @@
 
                 <li>
                     <a href="https://en.wikipedia.org/wiki/Angular" target="_blank">
-                        <figure><img alt="icon"  src="assets/icons/angular.png">
+                        <figure><img alt="icon" src="assets/icons/angular.png">
                             <figcaption>Angular</figcaption>
                         </figure>
                     </a>
@@ -227,7 +228,7 @@
                 <li>
                     <a href="https://en.wikipedia.org/wiki/Hibernate_(framework)" target="_blank">
                         <figure>
-                            <img alt="icon"  src="assets/icons/hibernate.png">
+                            <img alt="icon" src="assets/icons/hibernate.png">
                             <figcaption>Hibernate</figcaption>
                         </figure>
                     </a>
@@ -280,29 +281,29 @@
     <section id="gallery">
         <h3>Gallery</h3>
 
-       <!-- <img alt="icon" height="80" src="assets/icons/left-arrow.png">-->
+        <!-- <img alt="icon" height="80" src="assets/icons/left-arrow.png">-->
 
         <ul>
-            <li><img alt="image"  src="assets/images/gallery-1.jpg"></li>
-            <li><img alt="image"  src="assets/images/gallery-2.png"></li>
+            <li><img alt="image" src="assets/images/gallery-1.jpg"></li>
+            <li><img alt="image" src="assets/images/gallery-2.png"></li>
             <li><img alt="image" src="assets/images/gallery-3.jpeg"></li>
 
         </ul>
 
-       <!-- <img alt="icon" height="80" src="assets/icons/right-arrow.png">-->
+        <!-- <img alt="icon" height="80" src="assets/icons/right-arrow.png">-->
     </section>
     <!--Gallery End-->
 
 
 </main>
 
-<footer>
-    <h2>Contact</h2>
+<footer id="contact">
+    <h3>Contact</h3>
     <address>
         <ul>
-            <li><img alt="icon"  src="assets/icons/location.png"></li>
-            <li><img alt="icon"  src="assets/icons/gmail-logo.png"></li>
-            <li><img alt="icon"  src="assets/icons/whatsapp.png"></li>
+            <li><i class="fas fa-street-view"></i></li>
+            <li><i class="fas fa-envelope-square"></i></li>
+            <li><i class="fab fa-whatsapp-square"></i></li>
         </ul>
 
         <ul>
@@ -314,34 +315,27 @@
 
     <aside>
         <ul>
-            <li><a href="https://github.com/rashidya" target="_blank"></a><img alt="Github icon"
-                                                                               height="50"
-                                                                               src="assets/icons/github.png"></li>
+            <li><a href="https://github.com/rashidya" target="_blank"></a><i class="fab fa-github-square"></i></li>
             <li>
                 <a href="https://www.linkedin.com/in/rashmi-liyanage-690566225?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BjbYqNnvdRZSLFHG1TLBFGg%3D%3D"
-                   target="_blank"></a><img alt="Linkedin icon" height="50" src="assets/icons/linkedin.png"></li>
-            <li><a href="https://twitter.com/i/flow/login" target="_blank"></a><img
-                    alt="Twitter icon" height="50" src="assets/icons/twitter-sign.png"></li>
-            <li><a href="https://www.facebook.com/" target="_blank"></a><img alt="Facebook icon"
-                                                                             height="50"
-                                                                             src="assets/icons/facebook.png"></li>
-            <li><a href="https://www.instagram.com/" target="_blank"></a><img alt="Instagram icon"
-                                                                              height="50"
-                                                                              src="assets/icons/instagram.png">
+                   target="_blank"></a><i class="fab fa-linkedin"></i></li>
+            <li><a href="https://twitter.com/i/flow/login" target="_blank"></a><i class="fab fa-twitter-square"></i>
             </li>
+            <li><a href="https://www.facebook.com/" target="_blank"></a><i class="fab fa-facebook-square"></i></li>
+            <li><a href="https://www.instagram.com/" target="_blank"></a><i class="fab fa-instagram-square"></i></li>
         </ul>
     </aside>
 
     <aside>
         <form action="https://mail.google.com/">
-            <label>Name</label><br>
-            <input id="name" type="text"><br>
-            <label for="email">Email</label><br>
-            <input id="email" type="text"><br>
-            <label for="subject">Subject</label><br>
-            <input id="subject" type="text"><br>
-            <label for="message">Message</label><br>
-            <input id="message" type="text"><br><br>
+            <label>Name</label>
+            <input id="name" type="text">
+            <label for="email">Email</label>
+            <input id="email" type="text">
+            <label for="subject">Subject</label>
+            <input id="subject" type="text">
+            <label for="message">Message</label>
+            <input id="message" type="text" ><br>
 
             <button>send</button>
 
@@ -349,6 +343,7 @@
     </aside>
 
     <small>Copyright ©️ 2021 rashidya Inc. All rights reserved.</small>
+    <section></section>
 </footer>
 
 </body>
