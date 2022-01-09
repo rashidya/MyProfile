@@ -1,0 +1,49 @@
+
+#gallery>h3{
+    color: #000000;
+}
+
+#gallery>ul{
+    position: absolute;
+    top:10vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    overflow: hidden;
+    width: 75vw;
+    height: 30vw;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+#gallery>ul img{
+    width: 25vw;
+ /*   border-radius:50px ;*/
+   /* border: 5px solid #c4c4c4;*/
+
+height: 98%;
+
+}
+
+
+@keyframes slider {
+
+    0%,20%{
+        transform:translateX(25vw);
+    }
+    25%,45%{
+        transform:translateX(50vw);
+    }
+    50%,70%{
+        transform:translateX(75vw);
+    }
+    75%,95%{
+        transform:translateX(100vw);
+    }
+    100%{
+        transform:translateX(125vw);
+    }
+
+}
