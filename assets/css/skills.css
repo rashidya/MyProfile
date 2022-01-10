@@ -1,10 +1,10 @@
 #skills{
-   /* background-color: #232323;*/
+    /* background-color: #232323;*/
     background-color: white;
 }
 
 #skills h3{
-   color: #777777;
+    color: #777777;
 }
 
 #skills h4{
@@ -90,4 +90,4 @@ figure{
 #skills>section:nth-child(3)>i:nth-child(2){
     top:67vh;
     left: 5vw;
- }
+}

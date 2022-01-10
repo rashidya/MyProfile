@@ -6,3 +6,48 @@
 h3{
     color: #575757;
 }
+/*
+#projects>ul{
+    font-size: 1.5em;
+    font-weight: bold;
+    height: max-content;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+
+}
+#projects>ul>li:hover{
+
+    color: black;
+}
+#projects>ul:nth-child(3){
+    top: 0;
+    text-align: center;
+    width: 65vw;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+#projects>ul:nth-child(2){
+    top: 19vh;
+    width: 17vw;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: grey;
+}
+#projects>i{
+    position: absolute;
+    font-size: 5em;
+}
+#projects>i:nth-child(4){
+    top: 38vh;
+    right: 10vw;
+}
+
+#projects>i:nth-child(5){
+    top: 38vh;
+    left: 10vw;
+*/
