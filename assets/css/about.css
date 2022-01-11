@@ -15,6 +15,10 @@
     width: 40%;
 }
 
+#about>ul img{
+    height: 8vh;
+}
+
 #about li{
     font-size: 2em;
     font-weight: bolder;
