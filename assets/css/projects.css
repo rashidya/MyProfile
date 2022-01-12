@@ -1,71 +1,161 @@
-#projects{
-    background-color: #B0B0B0;
-    overflow: hidden;
+@media all and (min-width: 768px) {
+    #projects {
+        background-color: #B0B0B0;
+        overflow: hidden;
+    }
+
+    h3 {
+        color: #575757;
+    }
+
+    #projects img {
+        border: 8px solid #D7D7D7;
+        width: 25vw;
+        height: 45vh;
+        filter: blur(1px);
+    }
+
+    #projects img:hover {
+
+        width: 26vw;
+        height: 46vh;
+        filter: blur(0px);
+    }
+
+    #projects figure {
+        height: max-content;
+        position: absolute;
+        text-align: center;
+    }
+
+    #projects > a:nth-child(4) > figure {
+        top: 15vh;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+
+    }
+
+    #projects > a:nth-child(4) > figure > img {
+        width: 29vw;
+        height: 55vh;
+        filter: blur(0px);
+    }
+
+    #projects > a:nth-child(4) > figure > img:hover {
+        width: 30vw;
+        height: 56vh;
+
+    }
+
+    #projects > a:nth-child(3) > figure {
+        top: 15vh;
+        bottom: 0;
+        right: 11vw;
+        margin: auto;
+
+    }
+
+    #projects > a:nth-child(2) > figure {
+        top: 15vh;
+        bottom: 0;
+        left: 11vw;
+        margin: auto;
+
+    }
+
+    #projects figcaption {
+        font-family: sans-serif;
+        font-size: 1.5em;
+        color: #656565;
+        font-weight: bolder;
+    }
+
+    #projects figcaption:hover {
+
+        color: #000000;
+    }
+
 }
 
-h3{
-    color: #575757;
-}
+@media all and (max-width: 426px){
+    #projects {
+        background-color: #B0B0B0;
+        overflow: hidden;
+    }
 
-#projects img{
-    border: 8px solid #D7D7D7;
-    width: 25vw;
-    height: 45vh;
-    filter: blur(1px);
-}
-#projects img:hover{
+    h3 {
+        color: #575757;
+    }
 
-    width: 26vw;
-    height: 46vh;
-    filter: blur(0px);
-}
-#projects figure{
-    height: max-content;
-    position: absolute;
-    text-align: center;
-}
-#projects>a:nth-child(4)>figure{
-    top: 15vh;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+    #projects img {
+        border: 8px solid #D7D7D7;
+        width: 19vw;
+        height: 19vh;
+        filter: blur(1px);
+
+    }
+
+    #projects img:hover {
+        width: 19.5vw;
+        height: 19.5vh;
+        filter: blur(0px);
+    }
+
+    #projects figure {
+        height: max-content;
+        position: absolute;
+        text-align: center;
+    }
+
+    #projects > a:nth-child(4) > figure {
+        top: 8vh;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+
+    }
+
+    #projects > a:nth-child(4) > figure > img {
+        width: 32vw;
+        height: 26vh;
+        filter: blur(0px);
+    }
+
+    #projects > a:nth-child(4) > figure > img:hover {
+        width: 32.5vw;
+        height: 26.5vh;
+
+    }
+
+    #projects > a:nth-child(3) > figure {
+        top: 8vh;
+        bottom: 0;
+        right: 11vw;
+        margin: auto;
+
+    }
+
+    #projects > a:nth-child(2) > figure {
+        top: 8vh;
+        bottom: 0;
+        left: 11vw;
+        margin: auto;
+
+    }
+
+    #projects figcaption {
+        font-family: sans-serif;
+        font-size: 0.6em;
+        color: #656565;
+        font-weight: bolder;
+    }
+
+    #projects figcaption:hover {
+
+        color: #000000;
+    }
 
 }
-#projects>a:nth-child(4)>figure>img{
-    width: 29vw;
-    height: 55vh;
-    filter: blur(0px);
-}
-#projects>a:nth-child(4)>figure>img:hover{
-    width: 30vw;
-    height: 56vh;
-
-}
-
-#projects>a:nth-child(3)>figure{
-    top: 15vh;
-    bottom: 0;
-    right: 11vw;
-    margin: auto;
-
-}
-#projects>a:nth-child(2)>figure{
-    top: 15vh;
-    bottom: 0;
-    left: 11vw;
-    margin: auto;
-
-}
-
-#projects figcaption{
-    font-family: sans-serif;
-    font-size: 1.5em;
-    color: #656565;
-    font-weight: bolder;
-}
-#projects figcaption:hover{
-
-    color: #000000;
-}
-

@@ -1,96 +1,162 @@
-#education{
-    /*background-color:#717171;*/
-    background-color:#c4c4c4;
+@media all and (min-width: 768px) {
+    #education {
+        /*background-color:#717171;*/
+        background-color: #c4c4c4;
+    }
 
-    width: 100%;
-    height: 90vh;
+    #education > h3 {
+        color: #2a2a2a;
+    }
+
+    #education > p {
+        font-weight: bolder;
+        color: white;
+        font-size: 1em;
+        width: max-content;
+        position: absolute;
+        text-align: right;
+    }
+
+    #education > p:nth-child(2) {
+        top: 71vh;
+        left: 26vw;
+    }
+
+    #education > p:nth-child(3) {
+        top: 58vh;
+        left: 52vw;
+    }
+
+    #education > p:nth-child(4) {
+        top: 45vh;
+        left: 78vw;
+    }
+
+    #education > section {
+        position: absolute;
+        width: 83vw;
+        display: flex;
+        transform: rotate(
+                -14deg);
+        justify-content: space-around;
+        left: 6vw;
+    }
+
+
+    .line {
+        height: 1vh;
+        background-color: white;
+        border-radius: 4px;
+        top: 57vh;
+
+    }
+
+    #education > section:nth-child(9) {
+        top: 56vh;
+    }
+
+    #childImg {
+        height: 25vh;
+        top: 44vh;
+        left: 16vw;
+    }
+
+    #teenImg {
+        height: 30vh;
+        top: 25vh;
+        left: 46vw;
+    }
+
+    #uniImg {
+        height: 35vh;
+        top: 6vh;
+        left: 73vw;
+    }
+
+
+    #education > img {
+        position: absolute;
+    }
+
+    #education div {
+        height: 3vh;
+        width: 3vh;
+        border-radius: 100%;
+
+
+    }
+
+    #education > section > div:nth-child(1) {
+        background-color: darkgoldenrod;
+    }
+
+    #education > section > div:nth-child(2) {
+        background-color: darkgreen;
+    }
+
+    #education > section > div:nth-child(3) {
+        background-color: darkred;
+    }
 }
 
-#education>h3{
-    color: #2a2a2a;
-}
+@media all and (max-width: 426px){
+    #education {
+        background-color: #c4c4c4;
+    }
 
-#education>p{
-    font-weight: bolder;
-    color: white;
-    font-size: 1em;
-    width: max-content;
-    position: absolute;
-    text-align: right;
-}
+    #education > h3 {
+        color: #2a2a2a;
+    }
 
-#education>p:nth-child(2){
-    top: 71vh;
-    left: 26vw;
-}
-#education>p:nth-child(3){
-    top: 58vh;
-    left: 52vw;
-}
-#education>p:nth-child(4){
-    top: 45vh;
-    left: 78vw;
-}
-#education>section{
-    position: absolute;
-    width: 83vw;
-    display: flex;
-    transform: rotate(
-            -14deg);
-    justify-content: space-around;
-    left: 6vw;
-}
+    #education > p {
+        font-weight: bolder;
+        color: white;
+        font-size: 0.8em;
+        width: max-content;
+        position: absolute;
+        text-align: right;
+    }
 
+    #education > p:nth-child(2) {
+        top: 38vh;
+        right: 5vw;
+    }
 
-.line{
-    height: 1vh;
-    background-color: white;
-    border-radius: 4px;
-    top: 57vh;
+    #education > p:nth-child(3) {
+        top: 27vh;
+        left: 7vw;
+    }
 
-}
+    #education > p:nth-child(4) {
+        top: 13vh;
+        right: 5vw
+    }
 
-#education>section:nth-child(9){
-    top: 56vh;
-}
+    #education > section {
+       visibility: hidden;
+    }
 
-#childImg{
-    height: 25vh;
-    top: 44vh;
-    left: 16vw;
-}
+    #childImg {
+        height: 10vh;
+        top: 36vh;
+        left: 5vw;
+    }
 
-#teenImg{
-    height: 30vh;
-    top: 25vh;
-    left: 46vw;
-}
+    #teenImg {
+        height: 12vh;
+        top: 24vh;
+        right: 12vw;
+    }
 
-#uniImg{
-    height: 35vh;
-    top: 6vh;
-    left: 73vw;
-}
+    #uniImg {
+        height: 17vh;
+        top: 9vh;
+        left: 7vw;
+    }
+
+    #education > img {
+        position: absolute;
+    }
 
 
-#education>img{
-    position: absolute;
-}
-
-#education div{
-    height: 3vh;
-    width: 3vh;
-    border-radius: 100%;
-
-
-}
-
-#education>section>div:nth-child(1){
-    background-color: darkgoldenrod;
-}
-#education>section>div:nth-child(2){
-    background-color: darkgreen;
-}
-#education>section>div:nth-child(3){
-    background-color: darkred;
 }
