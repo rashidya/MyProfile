@@ -1,4 +1,49 @@
-@media all and (min-width: 768px) {
+@media all and (min-width: 1440px) {
+    #gallery > h3 {
+        color: #000000;
+    }
+
+    #gallery > img {
+        position: absolute;
+        border: 10px solid #ffffff;
+        border-radius: 61px;
+        height: 59vh;
+        width: 31vw;
+    }
+
+    #gallery > img:nth-child(3) {
+
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: 67vh;
+        width: 36vw;
+
+    }
+
+    #gallery > img:nth-child(2) {
+
+        bottom: 0;
+        top: 0;
+        margin: auto;
+        right: 5vw;
+
+    }
+
+    #gallery > img:nth-child(1) {
+
+        bottom: 0;
+        top: 0;
+        margin: auto;
+        left: 5vw;
+
+    }
+
+
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
     #gallery > h3 {
         color: #000000;
     }
