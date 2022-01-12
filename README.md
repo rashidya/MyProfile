@@ -53,6 +53,7 @@
 [https://www.figma.com/file/KofXPyGEiT06dPMsZVX2JN/Untitled?node-id=0%3A1](https://www.figma.com/file/KofXPyGEiT06dPMsZVX2JN/Untitled?node-id=0%3A1)
 
 <hr>
+<div align="center">
 
 ## For More Information, Please Check Out or Contact Me Via
 </div>
