@@ -67,11 +67,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 Hi,I'm Rashmi Liyanage.This is a protofolio web site project.
+<img src="assets/images/Capture.PNG" alt="Logo" width="90" height="90">
 
-[![Product Name Screen Shot][product-screenshot]](assets/images/Capture.PNG)
 
 
 
