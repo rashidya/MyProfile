@@ -68,7 +68,7 @@
 ## About The Project
 
 Hi,I'm Rashmi Liyanage.This is a protofolio web site project.
-<img src="assets/images/Capture.PNG" alt="Logo" width="600" height="90">
+<img src="assets/images/Capture.PNG" alt="Logo" >
 
 
 
