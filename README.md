@@ -27,15 +27,13 @@
     <img src="assets/images/birthday.png" alt="Logo" width="90" height="90">
   </a>
 
-<h3 align="center">MY PROFILE PROJECT</h3>
+<h1 align="center">MY PROFILE PROJECT</h1>
 <hr>
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    This includes my protofolio!
+    <br>
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://github.com/rashidya/Best-README-Template">View Demo</a>
     ·
     <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
     ·
