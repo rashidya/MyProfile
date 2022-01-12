@@ -183,7 +183,6 @@
 
 @media all and (min-width: 1440px){
     #about{
-        /*background-color: #2b2c2f;*/
         background-color: #ffffff;
 
     }
@@ -197,8 +196,21 @@
         top: 22%;
         left: 5%;
         width: 40%;
+
+        animation-name: imgAnimate;
+        animation-duration: 2s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
     }
 
+    @keyframes imgAnimate {
+        0%{
+            width: 40%;
+        }
+        100%{
+            width: 41%;
+        }
+    }
     #about>ul img{
         height: 8vh;
     }
