@@ -72,7 +72,7 @@ header a:hover {
     }
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 1440px) {
     header {
         width: 100%;
         height: 10vh;
@@ -96,6 +96,42 @@ header a:hover {
     }
     header ul{
         width: 38vw;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header a:hover {
+        color: white;
+        font-weight: bolder;
+        cursor: pointer;
+
+    }
+}
+
+@media all and (min-width: 426px) and (max-width: 768px){
+    header {
+        width: 100%;
+        height: 10vh;
+        background-color: #000000;
+        position:fixed;
+        top: 0;
+        z-index: 2;
+    }
+
+    header>nav{
+        position: absolute;
+        bottom: 30%;
+        right: 2%;
+    }
+    header li{
+        font-size: 1em;
+    }
+
+    header a{
+        color: #cbcbcb;
+    }
+    header ul{
+        width: 60vw;
         display: flex;
         justify-content: space-between;
     }

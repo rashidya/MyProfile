@@ -1,4 +1,4 @@
-@media all and (min-width: 768px){
+@media all and (min-width: 1440px){
     #about{
     /*background-color: #2b2c2f;*/
     background-color: #ffffff;
@@ -50,6 +50,67 @@
         font-weight: bolder;
         height: 6vh;
         width: 10vw;
+        background-color: #656565;
+        border-radius: 8px;
+        cursor: pointer;
+        border-color: #fdfbfb;
+
+
+    }
+}
+@media all and (min-width: 426px) and (max-width: 768px){
+    #about{
+    background-color: #ffffff;
+
+}
+
+    #about h3{
+        color: #565656;
+
+    }
+    #about>img{
+        position: absolute;
+        top: 14%;
+        left: 0;
+        width: 40%;
+        right: 0;
+        margin: auto;
+    }
+
+    #about>ul img{
+        height: 6vh;
+    }
+
+    #about li{
+        font-size: 1.5em;
+        font-weight: bolder;
+    }
+
+    #about>ul{
+        height: 37vh;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        position: absolute;
+        top: 55%;
+    }
+
+
+    #about>ul:nth-child(4){
+        left: 30%;
+    }
+    #about ul:nth-child(5){
+        right: 14%;
+    }
+
+    #about>button{
+        position: absolute;
+        top: 10%;
+        right: 3%;
+        color: white;
+        font-weight: bolder;
+        height: 6vh;
+        width: 16vw;
         background-color: #656565;
         border-radius: 8px;
         cursor: pointer;

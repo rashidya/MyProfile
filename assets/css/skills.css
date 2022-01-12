@@ -197,3 +197,16 @@
         left: 5vw;
     }
 }
+@media all and (min-width: 426px) and (max-width: 768px){
+    #skills h4 {
+        width: 27vh;
+        background-color: black;
+        position: absolute;
+        font-size: 2em;
+        color: #ffffff;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+    }
+}

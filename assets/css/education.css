@@ -98,6 +98,107 @@
         background-color: darkred;
     }
 }
+@media all and (min-width: 426px) and (max-width: 768px){
+    #education {
+        /*background-color:#717171;*/
+        background-color: #c4c4c4;
+    }
+
+    #education > h3 {
+        color: #2a2a2a;
+    }
+
+    #education > p {
+        font-weight: bolder;
+        color: white;
+        font-size: 0.7em;
+        width: max-content;
+        position: absolute;
+        text-align: right;
+    }
+
+    #education > p:nth-child(2) {
+        top: 71vh;
+        left: 26vw;
+    }
+
+    #education > p:nth-child(3) {
+        top: 58vh;
+        left: 52vw;
+    }
+
+    #education > p:nth-child(4) {
+        top: 45vh;
+        left: 78vw;
+    }
+
+    #education > section {
+        position: absolute;
+        width: 83vw;
+        display: flex;
+        transform: rotate(
+                -21deg
+        );
+        justify-content: space-around;
+        left: 8vw;
+    }
+
+
+    .line {
+        height: 1vh;
+        background-color: white;
+        border-radius: 4px;
+        top: 57vh;
+
+    }
+
+    #education > section:nth-child(9) {
+        top: 56vh;
+    }
+
+    #childImg {
+        height: 25vh;
+        top: 41vh;
+        left: 16vw;
+    }
+
+    #teenImg {
+        height: 30vh;
+        top: 25vh;
+        left: 46vw;
+    }
+
+    #uniImg {
+        height: 35vh;
+        top: 6vh;
+        left: 73vw;
+    }
+
+
+    #education > img {
+        position: absolute;
+    }
+
+    #education div {
+        height: 3vh;
+        width: 3vh;
+        border-radius: 100%;
+
+
+    }
+
+    #education > section > div:nth-child(1) {
+        background-color: darkgoldenrod;
+    }
+
+    #education > section > div:nth-child(2) {
+        background-color: darkgreen;
+    }
+
+    #education > section > div:nth-child(3) {
+        background-color: darkred;
+    }
+}
 
 @media all and (max-width: 426px){
     #education {
