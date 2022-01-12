@@ -28,7 +28,7 @@
   </a>
 
 <h1 align="center">MY PROFILE PROJECT</h1>
-<hr>
+
   <p align="center">
     This includes my protofolio!
     <br>
