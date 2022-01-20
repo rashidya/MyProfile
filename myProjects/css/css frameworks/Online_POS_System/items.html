@@ -36,12 +36,12 @@
 
 
 
-  <section class="text-center bg-secondary bg-opacity-75">
+  <section class="text-center bg-success">
     <nav class="nav justify-content-center">
-      <a aria-current="page" class="nav-link link-dark" href="home.html">Home</a>
-      <a class="nav-link link-dark" href="placeOrder.html">Place Order</a>
-      <a class="nav-link link-dark" href="customers.html">Customers</a>
-      <a class="nav-link link-dark" href="items.html">Items</a>
+      <a aria-current="page" class="nav-link link-light" href="home.html">Home</a>
+      <a class="nav-link link-light" href="placeOrder.html">Place Order</a>
+      <a class="nav-link link-light" href="customers.html">Customers</a>
+      <a class="nav-link link-light" href="items.html">Items</a>
 
 
     </nav>
@@ -51,6 +51,110 @@
 </header>
 
 <main>
+
+  <section class="mt-2 container-fluid">
+    <nav class="navbar navbar-light bg-dark mt-2 ">
+      <div class="container-fluid">
+        <form class="d-flex">
+          <input aria-label="Search" class="form-control me-2" placeholder="Item ID" type="search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <p for="" class="text-end text-white fs-6">Item ID : I001</p>
+      </div>
+    </nav>
+
+    <section class="row">
+      <section class="mt-4 col-3">
+        <div class="mb-3">
+          <input class="form-control" type="file" id="formFile">
+        </div>
+
+        <div class="w-100 h-75 bg-secondary bg-opacity-50"></div>
+      </section>
+
+      <form class="container-fluid mt-3 col">
+        <div class="row mb-3">
+          <label class="col-sm-2 col-form-label" for="inputEmail3">Item</label>
+          <div class="col-sm-10">
+            <input class="form-control" id="inputEmail3" type="email">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label class="col-sm-2 col-form-label" for="inputPassword3">Unit Price</label>
+          <div class="col-sm-10">
+            <input class="form-control" id="inputPassword3" type="password">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label class="col-sm-2 col-form-label" for="inputPassword4">Description</label>
+          <div class="col-sm-10">
+            <input class="form-control" id="inputPassword4" type="password">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label class="col-sm-2 col-form-label" for="inputPasswor">Qty On Hand</label>
+          <div class="col-sm-10">
+            <input class="form-control" id="inputPasswor" type="password">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="col-sm-2 col-form-label" for="inputPassword5">Discount</label>
+          <div class="col-sm-10">
+            <input class="form-control" id="inputPassword5" type="password">
+          </div>
+        </div>
+
+        <div class="text-end">
+          <button class="btn btn-danger mt-3" type="button">Delete</button>
+          <button class="btn btn-success mt-3" type="button">Add</button>
+        </div>
+      </form>
+    </section>
+
+
+  </section>
+
+  <section class="container-fluid mt-4">
+    <table class="table ">
+      <thead class="bg-secondary text-center">
+      <tr class="text-white">
+        <th scope="col">Item ID</th>
+        <th scope="col">Item</th>
+        <th scope="col">Description</th>
+        <th scope="col">Unit Price</th>
+        <th scope="col">Qty On Hand</th>
+
+      </tr>
+      </thead>
+      <tbody class="text-center">
+      <tr>
+        <th scope="row">I001</th>
+        <td>Potato</td>
+        <td>Indian</td>
+        <td>130</td>
+        <td>100Kg</td>
+
+      </tr>
+      <tr>
+        <th scope="row">I001</th>
+        <td>Potato</td>
+        <td>Indian</td>
+        <td>130</td>
+        <td>100Kg</td>
+      </tr>
+      <tr>
+        <th scope="row">I001</th>
+        <td>Potato</td>
+        <td>Indian</td>
+        <td>130</td>
+        <td>100Kg</td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+
+  </section>
 
 </main>
 </body>
