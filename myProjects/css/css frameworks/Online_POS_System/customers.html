@@ -29,19 +29,18 @@
 
       <section class="col m-1 d-flex justify-content-end">
         <i class="fas fa-user-circle fs-1" style="color: #606060"></i>
-        <a class="link-dark" href="">Sign Out</a>
       </section>
     </nav>
   </section>
 
 
 
-  <section class="text-center bg-secondary bg-opacity-75">
+  <section class="text-center bg-success ">
     <nav class="nav justify-content-center">
-      <a aria-current="page" class="nav-link link-dark" href="home.html">Home</a>
-      <a class="nav-link link-dark" href="placeOrder.html">Place Order</a>
-      <a class="nav-link link-dark" href="customers.html">Customers</a>
-      <a class="nav-link link-dark" href="items.html">Items</a>
+      <a aria-current="page" class="nav-link link-light" href="home.html">Home</a>
+      <a class="nav-link link-light" href="placeOrder.html">Place Order</a>
+      <a class="nav-link link-light" href="customers.html">Customers</a>
+      <a class="nav-link link-light" href="items.html">Items</a>
 
 
     </nav>
@@ -51,6 +50,90 @@
 </header>
 
 <main>
+  <section class="">
+    <nav class="navbar navbar-light bg-dark mt-2 ">
+      <div class="container-fluid">
+        <form class="d-flex">
+          <input aria-label="Search" class="form-control me-2" placeholder="Customer ID" type="search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <p for="" class="text-end text-white fs-6">Customer ID : C001</p>
+      </div>
+    </nav>
+
+    <form class="container-fluid mt-3">
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="inputEmail3">Name</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="inputEmail3" type="email">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="inputPassword3">Address</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="inputPassword3" type="password">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="inputPassword4">Contact No.</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="inputPassword4" type="password">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="inputPassword5">Email</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="inputPassword5" type="password">
+        </div>
+      </div>
+
+      <div class="text-end">
+        <button class="btn btn-danger mt-3" type="button">Delete</button>
+        <button class="btn btn-success mt-3" type="button">Register</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="container-fluid mt-4">
+    <table class="table ">
+      <thead class="bg-secondary">
+      <tr class="text-white">
+        <th scope="col">Customer ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Contact No</th>
+        <th scope="col">Email</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th scope="row">C001</th>
+        <td>Rashmi Liyanage</td>
+        <td>Galle</td>
+        <td>077-1212121</td>
+        <td>rashmi@gmail.com</td>
+
+      </tr>
+      <tr>
+        <th scope="row">C002</th>
+        <td>Rashmi Liyanage</td>
+        <td>Galle</td>
+        <td>077-1212121</td>
+        <td>rashmi@gmail.com</td>
+      </tr>
+      <tr>
+        <th scope="row">C003</th>
+        <td>Rashmi Liyanage</td>
+        <td>Galle</td>
+        <td>077-1212121</td>
+        <td>rashmi@gmail.com</td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+
+  </section>
 
 </main>
 </body>
