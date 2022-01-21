@@ -5,8 +5,9 @@
     <title>Customer</title>
   <link href='assets/fontawesome_6.0.0/css/all.css' rel='stylesheet'>
   <meta content="width=device-width, initial-scale=1" name="viewport">
-  <link crossorigin="anonymous" href="assets/bootstrap/css/bootstrap.min.css"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+  <!--<link crossorigin="anonymous" href="assets/bootstrap/css/bootstrap.min.css"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">-->
+  <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
     a:hover {
@@ -49,7 +50,7 @@
 
 </header>
 
-<main>
+<main class="container-fluid">
   <section class="container-fluid">
     <nav class="navbar navbar-light bg-dark mt-2 ">
       <div class="container-fluid">
@@ -57,7 +58,7 @@
           <input aria-label="Search" class="form-control me-2" placeholder="Customer ID" type="search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
-        <p for="" class="text-end text-white fs-6">Customer ID : C001</p>
+        <p for="" class="text-end text-white fs-6">Customer ID : 1</p>
       </div>
     </nav>
 
@@ -80,12 +81,6 @@
           <input class="form-control" id="inputPassword4" type="password">
         </div>
       </div>
-      <div class="row mb-3">
-        <label class="col-sm-2 col-form-label" for="inputPassword5">Email</label>
-        <div class="col-sm-10">
-          <input class="form-control" id="inputPassword5" type="password">
-        </div>
-      </div>
 
       <div class="text-end">
         <button class="btn btn-danger mt-3" type="button">Delete</button>
@@ -94,40 +89,36 @@
     </form>
   </section>
 
-  <section class="container-fluid mt-4">
+  <section class="mt-4">
     <table class="table ">
       <thead class="bg-secondary">
       <tr class="text-white text-center">
-        <th scope="col">Customer ID</th>
+        <th scope="col">ID</th>
         <th scope="col">Name</th>
         <th scope="col">Address</th>
-        <th scope="col">Contact No</th>
-        <th scope="col">Email</th>
+        <th scope="col">Tel No</th>
 
       </tr>
       </thead>
       <tbody class="text-center">
       <tr>
-        <th scope="row">C001</th>
-        <td>Rashmi Liyanage</td>
+         <th scope="row">1</th>
+        <td>Rashmi</td>
         <td>Galle</td>
-        <td>077-1212121</td>
-        <td>rashmi@gmail.com</td>
+        <td>077-50635222</td>
 
       </tr>
       <tr>
-        <th scope="row">C002</th>
-        <td>Rashmi Liyanage</td>
+        <th scope="row">1</th>
+        <td>Rashmi</td>
         <td>Galle</td>
-        <td>077-1212121</td>
-        <td>rashmi@gmail.com</td>
+        <td>077-50635222</td>
       </tr>
       <tr>
-        <th scope="row">C003</th>
-        <td>Rashmi Liyanage</td>
+        <th scope="row">1</th>
+        <td>Rashmi</td>
         <td>Galle</td>
-        <td>077-1212121</td>
-        <td>rashmi@gmail.com</td>
+        <td>077-50635222</td>
       </tr>
       </tbody>
     </table>
@@ -135,6 +126,10 @@
 
   </section>
 
+
 </main>
+<script crossorigin="anonymous"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

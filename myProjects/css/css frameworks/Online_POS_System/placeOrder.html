@@ -5,8 +5,9 @@
     <title>Place Order</title>
     <link href='assets/fontawesome_6.0.0/css/all.css' rel='stylesheet'>
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link crossorigin="anonymous" href="assets/bootstrap/css/bootstrap.min.css"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+    <!--<link crossorigin="anonymous" href="assets/bootstrap/css/bootstrap.min.css"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">-->
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
         a:hover {
@@ -52,7 +53,7 @@
 <main class="container-fluid">
 
     <section class="row">
-        <section class="col-8">
+        <section class="col">
             <nav class="navbar navbar-light bg-dark mt-2 ">
                 <div class="container-fluid">
                     <form class="d-flex">
@@ -80,12 +81,6 @@
                     <label class="col-sm-2 col-form-label" for="inputPassword4">Contact No.</label>
                     <div class="col-sm-10">
                         <input class="form-control" id="inputPassword4" type="password">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" for="inputPassword5">Email</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="inputPassword5" type="password">
                     </div>
                 </div>
             </form>
@@ -127,16 +122,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-
-
             </section>
 
 
@@ -156,35 +141,31 @@
                 <table class="table ">
                     <thead class="bg-success text-center">
                     <tr class="text-white">
-                        <th scope="col">Item Code</th>
                         <th scope="col">Item</th>
                         <th scope="col">Qty</th>
-                        <th scope="col">Unit Price(Rs)</th>
-                        <th scope="col">Discount(Rs)</th>
-                        <th scope="col">Total(Rs)</th>
+                        <th scope="col">Uni.Pri.</th>
+                        <th scope="col">Dis.</th>
+                        <th scope="col">Tot.</th>
                     </tr>
                     </thead>
                     <tbody class="text-center">
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Potato</td>
-                        <td>2Kg</td>
+                        <th scope="row">Tea</th>
+                        <td>2kg</td>
                         <td>120</td>
                         <td>-</td>
                         <td>240</td>
                     </tr>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Potato</td>
-                        <td>2Kg</td>
+                        <th scope="row">Tea</th>
+                        <td>2kg</td>
                         <td>120</td>
                         <td>-</td>
                         <td>240</td>
                     </tr>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Potato</td>
-                        <td>2Kg</td>
+                        <th scope="row">Tea</th>
+                        <td>2kg</td>
                         <td>120</td>
                         <td>-</td>
                         <td>240</td>
@@ -215,5 +196,8 @@
 
 
 </main>
+<script crossorigin="anonymous"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
