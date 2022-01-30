@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POS System</title>
+    <link href='assets/fontawesome_6.0.0/css/all.css' rel='stylesheet'>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        a:hover {
+            font-weight: bold;
+        }
+
+        #Home img {
+            height: 85.5vh;
+        }
+    </style>
+</head>
+<body>
+<header>
+
+    <section class="container-fluid">
+        <nav class="navbar navbar-light bg-secondary bg-opacity-75 row">
+            <div class="container-fluid col">
+                <a class="navbar-brand text-white fw-bold " href="#">
+                    <img alt="" class="d-inline-block align-text-top" height="30" src="assets/images/leaf.png"
+                         width="30">
+                    Green Mart
+                </a>
+            </div>
+
+            <section class="col m-1 d-flex justify-content-end">
+                <i class="fas fa-user-circle fs-1" style="color: #606060"></i>
+            </section>
+        </nav>
+    </section>
+
+
+    <section class="text-center " id="navBar">
+        <nav class="nav justify-content-center">
+            <a class="nav-link link-light" href="#" id="HomeLink">Home</a>
+            <a class="nav-link link-light" href="#" id="PlaceOrderLink">Place Order</a>
+            <a class="nav-link link-light" href="#" id="CustomerLink">Customers</a>
+            <a class="nav-link link-light" href="#" id="ItemLink">Items</a>
+
+
+        </nav>
+    </section>
+
+
+</header>
+
+
+<section id="Home">
+
+    <div class="carousel slide" data-bs-ride="carousel" id="carouselExampleCaptions">
+        <div class="carousel-indicators">
+            <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0"
+                    data-bs-target="#carouselExampleCaptions" type="button"></button>
+            <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleCaptions"
+                    type="button"></button>
+            <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleCaptions"
+                    type="button"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img alt="..." class="d-block w-100" src="assets/images/img1.png">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img alt="..." class="d-block w-100" src="assets/images/img2.png">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the second slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img alt="..." class="d-block w-100" src="assets/images/img3.png">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleCaptions"
+                type="button">
+            <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleCaptions"
+                type="button">
+            <span aria-hidden="true" class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+<section class="container-fluid" id="Customer">
+    <section class="container-fluid">
+        <nav class="navbar navbar-light bg-dark mt-2 ">
+            <div class="container-fluid">
+                <form class="d-flex">
+                    <input aria-label="Search" class="form-control me-2" placeholder="Customer ID" type="search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <p class="text-end text-white fs-6" for="">Customer ID : 1</p>
+            </div>
+        </nav>
+
+        <form class="container-fluid mt-3">
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="name">Name</label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="name" type="text">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="address">Address</label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="address" type="text">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="tel">Contact No.</label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="tel" type="tel">
+                </div>
+            </div>
+
+            <div class="text-end">
+                <button class="btn btn-danger mt-3" type="button">Delete</button>
+                <button class="btn btn-success mt-3" id="AddOrUpdateCustomer" type="button">Register</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="mt-4">
+        <table class="table" id="cusTbl">
+            <thead class="bg-secondary">
+            <tr class="text-white text-center">
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Tel No</th>
+
+            </tr>
+            </thead>
+            <tbody class="text-center">
+            <tr>
+                <th scope="row">1</th>
+                <td>Rashmi</td>
+                <td>Galle</td>
+                <td>077-50635222</td>
+
+            </tr>
+            <tr>
+                <th scope="row">1</th>
+                <td>Rashmi</td>
+                <td>Galle</td>
+                <td>077-50635222</td>
+            </tr>
+            <tr>
+                <th scope="row">1</th>
+                <td>Rashmi</td>
+                <td>Galle</td>
+                <td>077-50635222</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</section>
+
+<section class="container-fluid" id="Item">
+    <section class="mt-2 container-fluid">
+        <nav class="navbar navbar-light bg-dark mt-2 ">
+            <div class="container-fluid">
+                <form class="d-flex">
+                    <input aria-label="Search" class="form-control me-2" placeholder="Item ID" type="search">
+                    <button class="btn btn-outline-success" type="button">Search</button>
+                </form>
+                <p class="text-end text-white fs-6">Item ID : 1</p>
+            </div>
+        </nav>
+
+        <section class="row">
+            <section class="mt-4 col-3">
+                <div class="mb-3">
+                    <input class="form-control" id="formFile" type="file">
+                </div>
+
+                <div class="w-100 h-75 bg-secondary bg-opacity-50"><img alt="" id="itemImg" src=""></div>
+            </section>
+
+            <form class="container-fluid mt-3 col">
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="itemName">Item</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="itemName" type="text">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="price">Unit Price</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="price" type="number">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="Description">Description</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="Description" type="text">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="Qty">Qty On Hand</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="Qty" type="number">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="inputPassword5">Discount</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputPassword5" type="password">
+                    </div>
+                </div>
+
+                <div class="text-end">
+                    <button class="btn btn-danger mt-3" type="button">Delete</button>
+                    <button class="btn btn-success mt-3" type="button">Add</button>
+                </div>
+            </form>
+        </section>
+
+
+    </section>
+
+    <section class="container-fluid mt-4">
+        <table class="table ">
+            <thead class="bg-secondary text-center">
+            <tr class="text-white">
+                <th scope="col">ID</th>
+                <th scope="col">Item</th>
+                <th scope="col">Uni Price</th>
+                <th scope="col">Qty On Hand</th>
+
+            </tr>
+            </thead>
+            <tbody class="text-center">
+            <tr>
+                <th scope="row">1</th>
+                <td>Potato</td>
+                <td>130</td>
+                <td>100Kg</td>
+
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Potato</td>
+                <td>130</td>
+                <td>100Kg</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Potato</td>
+                <td>130</td>
+                <td>100Kg</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+</section>
+
+<section class="container-fluid" id="PlaceOrder">
+    <section class="row">
+        <section class="col">
+            <nav class="navbar navbar-light bg-dark mt-2 ">
+                <div class="container-fluid">
+                    <form class="d-flex">
+                        <input aria-label="Search" class="form-control me-2" placeholder="Customer ID" type="search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+
+                    </form>
+                </div>
+            </nav>
+
+            <form class="container-fluid mt-2">
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="inputEmail3">Name</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputEmail3" type="email">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="inputPassword3">Address</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputPassword3" type="password">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="inputPassword4">Contact No.</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputPassword4" type="password">
+                    </div>
+                </div>
+            </form>
+        </section>
+        <section class="col">
+            <nav class="navbar navbar-light bg-dark mt-2">
+                <div class="container-fluid">
+                    <form class="d-flex">
+                        <input aria-label="Search" class="form-control me-2" placeholder="Item ID" type="search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+
+                    </form>
+                </div>
+            </nav>
+
+            <section class="mt-2">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img alt="image" class="img-fluid rounded-start" src="assets/images/img_1.png">
+                        </div>
+                        <div class="col-md-8 ">
+                            <div class="card-body">
+                                <h5 class="card-title">Letuce</h5>
+                                <p class="card-text">Rs.100(100g)</p>
+                                <p class="card-text"><small class="text-muted">15 Available</small></p>
+                                <div>
+                                    <i class="fas fa-minus-circle fs-6 text-dark"></i>
+                                    <label class="col-sm-2 col-form-label d-inline fw-light p-1">1</label>
+                                    <i class="fas fa-plus-circle fs-6 text-dark"></i>
+                                </div>
+                                <div class="text-end">
+                                    <button class="btn btn-danger mt-3" type="button">Remove</button>
+                                    <button class="btn btn-success mt-3" type="button">Add To Cart</button>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </section>
+    </section>
+    <nav class="navbar navbar-light bg-dark">
+        <div class="container-fluid">
+            <form class="d-flex">
+                <input aria-label="Search" class="form-control me-2" placeholder="Order ID" type="search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <section class="row">
+        <section class="col">
+            <section class="container-fluid mt-2">
+                <table class="table ">
+                    <thead class="bg-secondary text-center">
+                    <tr class="text-white">
+                        <th scope="col">Item</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Uni.Pri.</th>
+                        <th scope="col">Dis.</th>
+                        <th scope="col">Tot.</th>
+                    </tr>
+                    </thead>
+                    <tbody class="text-center">
+                    <tr>
+                        <th scope="row">Tea</th>
+                        <td>2kg</td>
+                        <td>120</td>
+                        <td>-</td>
+                        <td>240</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Tea</th>
+                        <td>2kg</td>
+                        <td>120</td>
+                        <td>-</td>
+                        <td>240</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Tea</th>
+                        <td>2kg</td>
+                        <td>120</td>
+                        <td>-</td>
+                        <td>240</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </section>
+
+        <div class="card col-5 mt-4" style="width: 25rem;">
+            <div class="card-body">
+                <h5 class="card-title">Gross Total</h5>
+                <h5 class="card-title">Discount</h5>
+                <h5 class="card-title">Net Total</h5>
+                <div class="text-end">
+                    <button class="btn btn-danger mt-3" type="button">Cancel</button>
+                    <button class="btn btn-success mt-3" type="button">Place Order</button>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+</section>
+
+
+<script src="assets/JQuery/jquery-3.6.0.min.js"></script>
+
+<script>
+
+    $("#navBar").css('backgroundColor', 'Black');
+
+    $("#Home").css('display', 'Block');
+    $("#Customer,#PlaceOrder,#Item").css('display', 'none');
+
+
+    $("#HomeLink").click(function () {
+        $("#navBar").css('backgroundColor', 'Black');
+
+        $("#Home").css('display', 'Block');
+        $("#Customer,#PlaceOrder,#Item").css('display', 'none');
+
+    });
+
+    $("#PlaceOrderLink").click(function () {
+        $("#navBar").css('backgroundColor', 'Green');
+        $("#PlaceOrder").css('display', 'Block');
+        $("#Customer,#Home,#Item").css('display', 'none');
+
+    });
+
+    $("#CustomerLink").click(function () {
+        $("#navBar").css('backgroundColor', 'Green');
+        $("#Customer").css('display', 'Block');
+        $("#Home,#PlaceOrder,#Item").css('display', 'none');
+    });
+
+    $("#ItemLink").click(function () {
+        $("#navBar").css('backgroundColor', 'Green');
+        $("#Item").css('display', 'Block');
+        $("#Customer,#PlaceOrder,#Home").css('display', 'none');
+
+    });
+
+    /*Add a Customer*/
+
+    $("#AddOrUpdateCustomer").click(function () {
+
+        var cusName = $("#name").val();
+        var cusAddress = $("#address").val();
+        var cusTel = $("#tel").val();
+
+        /*        $("#cusTbl>tr:last-child").append().insertRow();
+                var row = table.insertRow(0);
+
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(3);
+                var cell4 = row.insertCell(4);
+
+                cell1.innerHTML = "4";
+                cell2.innerHTML = cusName;
+                cell3.innerHTML = cusAddress;
+                cell4.innerHTML = cusTel;*/
+
+    });
+
+</script>
+
+<script crossorigin="anonymous"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

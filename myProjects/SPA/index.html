@@ -20,7 +20,7 @@
 <header>
 
     <section class="container-fluid">
-        <nav class="navbar navbar-light bg-secondary bg-opacity-50 row">
+        <nav class="navbar navbar-light bg-secondary bg-opacity-75 row">
             <div class="container-fluid col">
                 <a class="navbar-brand text-white fw-bold " href="#">
                     <img src="assets/images/leaf.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
@@ -415,44 +415,36 @@
 
 <script>
 
-    document.getElementById("navBar").style.backgroundColor="Black";
+    $("#navBar").css('backgroundColor','Black');
+    $("#Home").css('display','Block');
+    $("#Customer,#PlaceOrder,#Item").css('display','none');
 
-    document.getElementById("Home").style.display=  'Block';
-    document.getElementById("Customer").style.display='none';
-    document.getElementById("Item").style.display= 'none';
-    document.getElementById("Place Order").style.display= 'none';
 
-    document.getElementById("HomeLink").addEventListener("click",function (){
-        document.getElementById("navBar").style.backgroundColor="Black";
-        document.getElementById("Home").style.display='Block';
-        document.getElementById("Customer").style.display='none';
-        document.getElementById("Item").style.display= 'none';
-        document.getElementById("Place Order").style.display= 'none';
-    });
+    $("#HomeLink").click(function (){
+        $("#navBar").css('backgroundColor','Black');
 
-    document.getElementById("PlaceOrderLink").addEventListener("click",function (){
-        document.getElementById("navBar").style.backgroundColor="Grey";
-        document.getElementById("Place Order").style.display= 'Block';
-        document.getElementById("Home").style.display='none';
-        document.getElementById("Customer").style.display='none';
-        document.getElementById("Item").style.display= 'none';
+        $("#Home").css('display','Block');
+        $("#Customer,#PlaceOrder,#Item").css('display','none');
 
     });
 
-    document.getElementById("CustomerLink").addEventListener("click",function (){
-        document.getElementById("navBar").style.backgroundColor="Green";
-        document.getElementById("Customer").style.display='Block';
-        document.getElementById("Home").style.display='none';
-        document.getElementById("Item").style.display='none';
-        document.getElementById("Place Order").style.display='none';
+    $("#PlaceOrderLink").click(function (){
+        $("#navBar").css('backgroundColor','Green');
+        $("#PlaceOrder").css('display','Block');
+        $("#Customer,#Home,#Item").css('display','none');
+
     });
 
-    document.getElementById("ItemLink").addEventListener("click",function (){
-        document.getElementById("navBar").style.backgroundColor="Black";
-        document.getElementById("Item").style.display= 'Block';
-        document.getElementById("Home").style.display= 'none';
-        document.getElementById("Customer").style.display='none';
-        document.getElementById("Place Order").style.display='none';
+    $("#CustomerLink").click(function (){
+        $("#navBar").css('backgroundColor','Green');
+        $("#Customer").css('display','Block');
+        $("#Home,#PlaceOrder,#Item").css('display','none');
+    });
+
+    $("#ItemLink").click(function (){
+        $("#navBar").css('backgroundColor','Green');
+        $("#Item").css('display','Block');
+        $("#Customer,#PlaceOrder,#Home").css('display','none');
 
     });
 </script>
