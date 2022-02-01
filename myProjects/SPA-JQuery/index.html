@@ -458,23 +458,49 @@
     /*Add a Customer*/
 
     $("#AddOrUpdateCustomer").click(function () {
+        let cusName = $("#name").val();
+        let cusId = $("#cusId").val();
+        let cusAddress = $("#address").val();
+        let cusTel = $("#tel").val();
 
-        var cusName = $("#name").val();
-        var cusAddress = $("#address").val();
-        var cusTel = $("#tel").val();
+        let row = `<tr><td>${cusId}</td><td>${cusName}</td><td>${cusAddress}</td><td>${cusTel}</td></tr>`;
+        $("#cusTbl").append(row)
 
-        /*        $("#cusTbl>tr:last-child").append().insertRow();
-                var row = table.insertRow(0);
 
-                var cell1 = row.insertCell(0);
-                var cell2 = row.insertCell(1);
-                var cell3 = row.insertCell(3);
-                var cell4 = row.insertCell(4);
+        $("#cusTbl>tr").click(function () {
+            let id = $(this).children(':first-child').html();
+            let name = $(this).children(':nth-child(2)').html();
+            let address = $(this).children(':nth-child(3)').html();
+            let tel = $(this).children(':nth-child(4)').html();
 
-                cell1.innerHTML = "4";
-                cell2.innerHTML = cusName;
-                cell3.innerHTML = cusAddress;
-                cell4.innerHTML = cusTel;*/
+            $("#cusId").val(id);
+            $("#name").val(name);
+            $("#address").val(address);
+            $("#tel").val(tel);
+        });
+    });
+
+    $("#AddOrUpdateItem").click(function () {
+
+        let itemName = $("#itemName").val();
+        let itemId = $("#itemId").val();
+        let price = $("#price").val();
+        let qty = $("#Qty").val();
+
+        let row = `<tr><td>${itemId}</td><td>${itemName}</td><td>${price}</td><td>${qty}</td></tr>`;
+        $("#itemTbl").append(row);
+
+        $("#itemTbl>tr").click(function () {
+            let id = $(this).children(':first-child').html();
+            let itemName = $(this).children(':nth-child(2)').html();
+            let price = $(this).children(':nth-child(3)').html();
+            let qty = $(this).children(':nth-child(4)').html();
+
+            $("#itemId").val(id);
+            $("#itemName").val(itemName);
+            $("#price").val(price);
+            $("#Qty").val(qty);
+        });
 
     });
 

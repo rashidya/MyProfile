@@ -58,7 +58,7 @@
 
     body{
         position: relative;
-        top:10vh;
+        margin-top:10vh;
         /*   padding-top: 10vh;*/
     }
     h1{
