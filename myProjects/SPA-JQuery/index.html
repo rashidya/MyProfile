@@ -178,9 +178,10 @@
             <section class="mt-4 col-3">
                 <div class="mb-3">
                     <input class="form-control" id="formFile" type="file">
+                    <button class="btn btn-secondary mt-3" type="button" id="setImg">Set</button>
                 </div>
-
-                <div class="w-100 h-75 bg-secondary bg-opacity-50"><img alt="" id="itemImg" src=""></div>
+                <img alt="" id="itemImg" src="" class="h-75">
+               <!-- <div class="w-100 h-75 bg-secondary bg-opacity-50"></div>-->
             </section>
 
             <form class="container-fluid mt-3 col">
@@ -427,17 +428,28 @@
 
     });
 
-    /*Add a Customer*/
 
+    $("#setImg").click(function (){
+        $("#itemImg").attr('src',$("#formFile").val());
+    });
+
+
+    /*Add  Customer*/
     $("#AddOrUpdateCustomer").click(function () {
         let cusName = $("#name").val();
         let cusId = $("#cusId").val();
         let cusAddress = $("#address").val();
         let cusTel = $("#tel").val();
 
+        /*Insert Row*/
         let row = `<tr><td>${cusId}</td><td>${cusName}</td><td>${cusAddress}</td><td>${cusTel}</td></tr>`;
         $("#cusTbl").append(row)
 
+        /*Clear input fields*/
+        $("#cusId").val("");
+        $("#name").val("");
+        $("#address").val("");
+        $("#tel").val("");
 
         $("#cusTbl>tr").click(function () {
             let id = $(this).children(':first-child').html();
@@ -452,6 +464,8 @@
         });
     });
 
+
+    /*Add Item*/
     $("#AddOrUpdateItem").click(function () {
 
         let itemName = $("#itemName").val();
@@ -461,6 +475,11 @@
 
         let row = `<tr><td>${itemId}</td><td>${itemName}</td><td>${price}</td><td>${qty}</td></tr>`;
         $("#itemTbl").append(row);
+
+        $("#itemId").val("");
+        $("#itemName").val("");
+        $("#price").val("");
+        $("#Qty").val("");
 
         $("#itemTbl>tr").click(function () {
             let id = $(this).children(':first-child').html();
