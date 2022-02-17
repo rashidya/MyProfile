@@ -5,6 +5,9 @@
     <title>KITT theme light system</title>
 
     <style>
+        body{
+            background-color: black;
+        }
         section {
             height: 10vh;
             width: 80vw;
@@ -21,6 +24,7 @@
         section > div {
             width: 16vw;
             border: 1px solid black;
+            background-color: white;
         }
 
         button {
@@ -63,18 +67,16 @@
 <script>
 
     var colors =[ "#800000","#b61515","#fc6060","#f6c3c3","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"];
-    var divs =[  $("section>div:nth-child(1)"),$("section>div:nth-child(2)"),$("section>div:nth-child(3)"),$("section>div:nth-child(4)"),$("section>div:nth-child(5)")];
+    var divs =[$("section>div:nth-child(1)"),$("section>div:nth-child(2)"),$("section>div:nth-child(3)"),$("section>div:nth-child(4)"),$("section>div:nth-child(5)")];
 
     var index=0;
-  
+
 
     var tempColors=[];
     function animateColors() {
 
         tempColors.unshift(colors[index]);
-        console.log(tempColors.length,index);
-
-        for (let i = 0; i < tempColors.length; i++) {
+         for (let i = 0; i < tempColors.length; i++) {
             divs[i].css('background-color',tempColors[i]);
         }
 
@@ -96,7 +98,7 @@
     let timerId;
     $("#start").click(function () {
         clearInterval(timerId);
-        timerId =   setInterval(animateColors,40);
+        timerId =   setInterval(animateColors,80);
 
     });
 
