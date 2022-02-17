@@ -46,11 +46,11 @@
 <body>
 
 <section>
-    <div style="background-color: #800000"></div>
-    <div style="background-color: #b61515"></div>
-    <div style="background-color: #fc6060"></div>
-    <div style="background-color: #f6c3c3"></div>
-    <div style="background-color: #ffffff"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
 </section>
 
 <div>
@@ -62,24 +62,42 @@
 <script src="assets/JQuery/jquery-3.6.0.min.js"></script>
 <script>
 
-    function animateColors() {
-        let d1 = $("section>div:nth-child(1)").css('background-color');
-        let d2 = $("section>div:nth-child(2)").css('background-color');
-        let d3 = $("section>div:nth-child(3)").css('background-color');
-        let d4 = $("section>div:nth-child(4)").css('background-color');
-        let d5 = $("section>div:nth-child(5)").css('background-color');
+    var colors =[ "#800000","#b61515","#fc6060","#f6c3c3","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"];
+    var divs =[  $("section>div:nth-child(1)"),$("section>div:nth-child(2)"),$("section>div:nth-child(3)"),$("section>div:nth-child(4)"),$("section>div:nth-child(5)")];
 
-        $("section>div:nth-child(1)").css('background-color',d2);
-        $("section>div:nth-child(2)").css('background-color',d3);
-        $("section>div:nth-child(3)").css('background-color',d4);
-        $("section>div:nth-child(4)").css('background-color',d5);
-        $("section>div:nth-child(5)").css('background-color',d1);
+    var index=0;
+  
+
+    var tempColors=[];
+    function animateColors() {
+
+        tempColors.unshift(colors[index]);
+        console.log(tempColors.length,index);
+
+        for (let i = 0; i < tempColors.length; i++) {
+            divs[i].css('background-color',tempColors[i]);
+        }
+
+        index++;
+        if (index==5){
+            tempColors=[];
+        }
+
+        if(index==10){
+            index=0;
+            tempColors=[];
+            divs=divs.reverse();
+        }
+
+
     }
 
-    let timerId
+
+    let timerId;
     $("#start").click(function () {
         clearInterval(timerId);
-        timerId =   setInterval(animateColors,100);
+        timerId =   setInterval(animateColors,40);
+
     });
 
 
