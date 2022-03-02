@@ -1,100 +1,6 @@
 /*Item*/
 
-function enableAddItem() {
-    if (regExPrice.test($("#price").val()) && regExItemName.test($("#itemName").val()) && regExItemId.test($("#itemId").val()) && regExQty.test($("#Qty").val())) {
-        $("#AddOrUpdateItem").attr('disabled', false);
-    } else {
-        $("#AddOrUpdateItem").attr('disabled', true);
-    }
-}
 
-function addItem() {
-    let itemName = $("#itemName").val();
-    let itemId = $("#itemId").val();
-    let itemPrice = $("#price").val();
-    let itemQty = $("#Qty").val();
-
-    var itemOb ={
-
-
-        id:itemId,
-        name:itemName,
-        price:itemPrice,
-        qty:itemQty
-    }
-
-    items.push(itemOb);
-
-
-    loadAllItems();
-    clearItem();
-
-}
-
-function updateItem() {
-    items.find(function (e){
-        if(e.id==$("#itemId").val()){
-            e.name= $("#itemName").val();
-            e.price=$("#price").val();
-            e.qty=$("#Qty").val();
-        }
-    });
-
-    loadAllItems();
-    clearItem();
-
-}
-
-function deleteItem() {
-    items.find(function (e){
-        if(e.id==$("#itemId").val()){
-            console.log(items.indexOf(e));
-            customers.splice(items.indexOf(e),1);
-        }
-    });
-
-    loadAllItems();
-    clearItem();
-
-}
-
-function loadAllItems(){
-
-    for (let i = 0; i < items.length; i++) {
-        var tempItem = items[i];
-
-
-        let row = `<tr><td>${tempItem.id}</td><td>${tempItem.name}</td><td>${tempItem.price}</td><td>${tempItem.qty}</td></tr>`;
-        $("#itemTbl").append(row);
-
-        $("#itemTbl>tr").off('click');
-
-        $("#itemTbl>tr").click(function () {
-            let id = $(this).children(':first-child').html();
-            let itemName = $(this).children(':nth-child(2)').html();
-            let price = $(this).children(':nth-child(3)').html();
-            let qty = $(this).children(':nth-child(4)').html();
-
-            $("#itemId").val(id);
-            $("#itemName").val(itemName);
-            $("#price").val(price);
-            $("#Qty").val(qty);
-        });
-    }
-
-};
-
-function clearItem() {
-    $("#itemId").val("");
-    $("#itemId").css('border-color', 'Silver');
-    $("#itemName").val("");
-    $("#itemName").css('border-color', 'Silver');
-    $("#price").val("");
-    $("#price").css('border-color', 'Silver');
-    $("#Qty").val("");
-    $("#Qty").css('border-color', 'Silver');
-    enableAddItem();
-}
 
 var regExItemId = /^(I-)[0-9]{3}$/;
 var regExItemName = /^([A-z0-9/,\s]{3,})$/;
@@ -146,7 +52,7 @@ $("#Qty").keyup(function (e) {
     if (regExQty.test($("#Qty").val())) {
         $("#Qty").css('border-color', 'Green');
 
-        if ($('#AddOrUpdateItem').is(':enabled') && e.key == "Enter") {
+        if ($('#AddItem').is(':enabled') && e.key == "Enter") {
             addItem();
             $("#itemId").focus();
         }
@@ -154,6 +60,107 @@ $("#Qty").keyup(function (e) {
         $("#Qty").css('border-color', 'Red');
     }
 });
+
+function enableAddItem() {
+    if (regExItemId.test($("#itemId").val()) && regExItemName.test($("#itemName").val()) && regExPrice.test($("#price").val()) && regExQty.test($("#Qty").val())) {
+        $("#AddItem").attr('disabled', false);
+    } else {
+        $("#AddItem").attr('disabled', true);
+    }
+}
+
+function addItem() {
+    let itemName = $("#itemName").val();
+    let itemId = $("#itemId").val();
+    let itemPrice = $("#price").val();
+    let itemQty = $("#Qty").val();
+
+    items.push(new ItemDTO(itemId,itemName,itemPrice,itemQty));
+
+
+    loadAllItems();
+    clearItem();
+
+}
+
+function updateItem() {
+    items.find(function (e){
+        if(e.getId()==$("#itemId").val()){
+            e.setName($("#itemName").val());
+            e.setPrice($("#price").val());
+            e.setQty($("#Qty").val());
+        }
+    });
+
+    loadAllItems();
+    clearItem();
+
+}
+
+function deleteItem() {
+    items.find(function (e){
+        if(e.getId()==$("#itemId").val()){
+            items.splice(items.indexOf(e),1);
+        }
+    });
+
+    loadAllItems();
+    clearItem();
+
+}
+
+function loadAllItems(){
+    $("#itemTbl>tr").remove();
+
+    for (let item of items) {
+
+        let row = `<tr><td>${item.getId()}</td><td>${item.getName()}</td><td>${item.getPrice()}</td><td>${item.getQty()}</td></tr>`;
+        $("#itemTbl").append(row);
+
+        $("#itemTbl>tr").off('click');
+        $("#itemTbl>tr").off('dblclick');
+
+        $("#itemTbl>tr").click(function () {
+            let id = $(this).children(':first-child').html();
+            let itemName = $(this).children(':nth-child(2)').html();
+            let price = $(this).children(':nth-child(3)').html();
+            let qty = $(this).children(':nth-child(4)').html();
+
+            $("#itemId").val(id);
+            $("#itemName").val(itemName);
+            $("#price").val(price);
+            $("#Qty").val(qty);
+        });
+
+        $("#itemTbl>tr").dblclick(function () {
+           var itemRowId =$(this).children(':first-child').html();
+            items.find(function (e){
+                if(e.getId()==itemRowId){
+                    items.splice(items.indexOf(e),1);
+                }
+            });
+
+            loadAllItems();
+            clearItem();
+        });
+    }
+
+
+
+}
+
+function clearItem() {
+    $("#itemId").val("");
+    $("#itemId").css('border-color', 'Silver');
+    $("#itemName").val("");
+    $("#itemName").css('border-color', 'Silver');
+    $("#price").val("");
+    $("#price").css('border-color', 'Silver');
+    $("#Qty").val("");
+    $("#Qty").css('border-color', 'Silver');
+    enableAddItem();
+}
+
 
 $("#AddItem").click(function () {
     addItem();
