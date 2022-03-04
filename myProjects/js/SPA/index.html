@@ -40,7 +40,7 @@
 
 
     <section class="text-center " id="navBar">
-        <nav class="nav justify-content-center bg-black">
+        <nav class="nav justify-content-center ">
             <a class="nav-link link-light" href="#" id="HomeLink">Home</a>
             <a class="nav-link link-light" href="#" id="PlaceOrderLink">Place Order</a>
             <a class="nav-link link-light" href="#" id="CustomerLink">Customer</a>
@@ -100,24 +100,25 @@
 
 <section class="container-fluid" id="Customer">
 
-    <section class="row container-fluid">
-        <div class="col-4  d-flex justify-content-center">
-            <img alt="image" class="img-fluid rounded-start w-50 h-50" src="assets/images/birthday.png">
+    <section class="row container-fluid m-0">
+        <div class="col-4  d-flex justify-content-center align-self-lg-center">
+            <img alt="image" class="img-fluid rounded-start w-75" src="assets/images/shopping.png">
         </div>
         <section class="container-fluid col">
-            <nav class="navbar navbar-light bg-dark mt-2 ">
+            <nav class="navbar bg-dark mt-4 ">
                 <div class="container-fluid">
-                    <form class="d-flex">
-                        <input aria-label="Search" class="form-control me-2" placeholder="Customer ID" type="search">
+                    <form class="d-flex ">
+                        <input aria-label="Search" class="form-control  me-2" placeholder="Customer ID" type="search">
                         <button class="btn btn-outline-success" id="searchCustomer" type="btn">Search</button>
                     </form>
+
 
                 </div>
             </nav>
 
             <form class="container-fluid mt-3">
                 <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" for="cusId">Customer Id</label>
+                    <label class="col-sm-2 col-form-label " for="cusId">Customer Id</label>
                     <div class="col-sm-10">
                         <input class="form-control" id="cusId" type="text">
                         <small class="text-danger" id="errorCustomerId" style="display: none">! Wrong format
@@ -281,6 +282,33 @@
             </nav>
 
             <form class="container-fluid mt-2">
+
+
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="orderIdPlaceOrder">Order Id</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="orderIdPlaceOrder" type="text">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="orderDatePlaceOrder">Order Id</label>
+                    <div class="col-sm-10">
+                        <input class="form-control " id="orderDatePlaceOrder" type="date" >
+                    </div>
+                </div>
+
+
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="selectCustomer">Customer</label>
+                    <div class="col-sm-10">
+                        <select aria-label="Default select example" class="form-select " id="selectCustomer">
+                            <option selected>Select Customer</option>
+
+                        </select>
+                    </div>
+
+                </div>
+
                 <div class="row mb-3">
                     <label class="col-sm-2 col-form-label" for="cusIdPlaceOrder">Customer Id</label>
                     <div class="col-sm-10">
@@ -457,26 +485,18 @@
     });
 
     $("#CustomerLink").click(function () {
-        $("#navBar").css('backgroundColor', 'Green');
+        $("#navBar").css('backgroundColor', 'Grey');
         $("#Customer").css('display', 'Block');
         $("#Home,#PlaceOrder,#Item").css('display', 'none');
     });
 
     $("#ItemLink").click(function () {
-        $("#navBar").css('backgroundColor', 'Green');
+        $("#navBar").css('backgroundColor', 'Grey');
+        console.log($("#navBar").css('backgroundColor'));
         $("#Item").css('display', 'Block');
         $("#Customer,#PlaceOrder,#Home").css('display', 'none');
 
     });
-
-    function showImg(event) {
-        if (event.target.files.length > 0) {
-            var src = URL.createObjectURL(event.target.files[0]);
-            var preview = $("#itemImg");
-            preview.src = src;
-            preview.style.display = "block";
-        }
-    }
 
     /*
 
@@ -867,8 +887,10 @@
 <script src="db/DB.js"></script>
 <script src="controller/CustomerController.js"></script>
 <script src="controller/ItemController.js"></script>
+<script src="controller/PlaceOrderController.js"></script>
 <script src="model/ItemDTO.js"></script>
 <script src="model/CustomerDTO.js"></script>
+<script src="model/OrderDTO.js"></script>
 </body>
 
 </html>

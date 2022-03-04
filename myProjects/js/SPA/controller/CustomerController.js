@@ -1,3 +1,4 @@
+generateCustomerId();
 
 var regExCustomerId = /^(C-)[0-9]{3}$/;
 var regExPersonName = /^([A-z\s. ]{3,80})$/;
@@ -7,34 +8,33 @@ var regExTel = /^([0][0-9]{9}|[0][0-9]{2}[-\s][0-9]{7})$/;
 /*Focusing and Validating Customer*/
 $("#cusId").keyup(function (e) {
     enableAddCustomer();
-    if(regExCustomerId.test($("#cusId").val()) ){
+    if (regExCustomerId.test($("#cusId").val())) {
         $("#cusId").css('border-color', 'Green');
-        $("#errorCustomerId").css('display','none');
+        $("#errorCustomerId").css('display', 'none');
         if (e.key == "Enter") {
             $("#name").focus();
         }
 
-    }else{
+    } else {
         $("#cusId").css('border-color', 'Red');
-        $("#errorCustomerId").css('display','block');
+        $("#errorCustomerId").css('display', 'block');
     }
-
 
 
 });
 
 $("#name").keyup(function (e) {
     enableAddCustomer();
-    if(regExCustomerId.test($("#cusId").val()) ){
+    if (regExPersonName.test($("#name").val())) {
         $("#name").css('border-color', 'Green');
-        $("#errorCustomerName").css('display','none');
-        if (e.key == "Enter" ) {
+        $("#errorCustomerName").css('display', 'none');
+        if (e.key == "Enter") {
             $("#address").focus();
         }
 
-    }else{
+    } else {
         $("#name").css('border-color', 'Red');
-        $("#errorCustomerName").css('display','block');
+        $("#errorCustomerName").css('display', 'block');
     }
 
 
@@ -44,11 +44,13 @@ $("#address").keyup(function (e) {
     enableAddCustomer();
     if (regExAddress.test($("#address").val())) {
         $("#address").css('border-color', 'Green');
+        $("#errorCustomerAddress").css('display', 'none');
         if (e.key == "Enter") {
             $("#tel").focus();
         }
     } else {
         $("#address").css('border-color', 'Red');
+        $("#errorCustomerAddress").css('display', 'block');
     }
 
 });
@@ -57,19 +59,38 @@ $("#tel").keyup(function (e) {
     enableAddCustomer();
     if (regExTel.test($("#tel").val())) {
         $("#tel").css('border-color', 'Green');
+        $("#errorCustomerTel").css('display', 'none');
+
         if ($('#AddCustomer').is(':enabled') && e.key == "Enter") {
             addCustomer();
             $("#cusId").focus();
         }
     } else {
         $("#tel").css('border-color', 'Red');
+        $("#errorCustomerTel").css('display', 'block');
     }
 
 });
 
 
+function generateCustomerId() {
+    var tempId;
+    if (customers.length != 0) {
+
+        var id = customers[customers.length - 1].getId();
+        var temp = id.split("-")[1];
+        temp++;
+        tempId = (temp < 10) ? "C-00" + temp : (temp < 100) ? "C-0" + temp : "C-" + temp;
+
+    } else {
+        tempId = "C-001";
+    }
+    $("#cusId").val(tempId);
+}
+
+
 function enableAddCustomer() {
-    if (regExCustomerId.test($("#cusId").val()) && regExPersonName.test($("#name").val()) && regExAddress.test($("#address").val()) && regExTel.test($("#tel").val())) {
+    if (customerNotExist() && regExCustomerId.test($("#cusId").val()) && regExPersonName.test($("#name").val()) && regExAddress.test($("#address").val()) && regExTel.test($("#tel").val())) {
         $("#AddCustomer").attr('disabled', false);
     } else {
         $("#AddCustomer").attr('disabled', true);
@@ -77,48 +98,59 @@ function enableAddCustomer() {
 }
 
 function addCustomer() {
-    let cusName = $("#name").val();
-    let cusId = $("#cusId").val();
-    let cusAddress = $("#address").val();
-    let cusTel = $("#tel").val();
+    let saveCustomer = confirm("Do you want to save this customer?");
+    if (saveCustomer.valueOf()) {
+        let cusName = $("#name").val();
+        let cusId = $("#cusId").val();
+        let cusAddress = $("#address").val();
+        let cusTel = $("#tel").val();
 
 
-    customers.push(new CustomerDTO(cusId,cusName,cusAddress,cusTel));
+        customers.push(new CustomerDTO(cusId, cusName, cusAddress, cusTel));
 
-    console.log(customers);
-    loadAllCustomers();
+        loadAllCustomers();
 
-    clearCustomer();
+        clearCustomer();
+        generateCustomerId();
+        loadAllCustomersAndItems();
+    }
 
 
 }
 
 function updateCustomer() {
-    customers.find(function (e){
-        if(e.getId()==$("#cusId").val()){
-            e.setName($("#name").val());
-            e.setAddress($("#address").val());
-            e.setTel($("#tel").val());
-        }
-    });
+    let updateCustomer = confirm("Do you want to update this customer?");
+    if (updateCustomer.valueOf()) {
+        customers.find(function (e) {
+            if (e.getId() == $("#cusId").val()) {
+                e.setName($("#name").val());
+                e.setAddress($("#address").val());
+                e.setTel($("#tel").val());
+            }
+        });
 
-    loadAllCustomers();
-    clearCustomer();
+        loadAllCustomers();
+        clearCustomer();
+        generateCustomerId();
+    }
 }
 
-function deleteCustomer(){
-    customers.find(function (e){
-        if(e.getId()==$("#cusId").val()){
+function deleteCustomer() {
+    let deleteCustomer = confirm("Do you want to delete this customer?");
+    if (deleteCustomer.valueOf()) {
+        customers.find(function (e) {
+            if (e.getId() == $("#cusId").val()) {
+                customers.splice(customers.indexOf(e), 1);
+            }
+        });
 
-            customers.splice(customers.indexOf(e),1);
-        }
-    });
-
-    loadAllCustomers();
-    clearCustomer();
+        loadAllCustomers();
+        clearCustomer();
+        generateCustomerId();
+    }
 }
 
-function loadAllCustomers(){
+function loadAllCustomers() {
     $("#cusTbl>tr").remove();
 
     for (let customer of customers) {
@@ -143,16 +175,19 @@ function loadAllCustomers(){
     });
 
     $("#cusTbl>tr").dblclick(function () {
-        let rowCusId=$(this).children(':first-child').html();
-        customers.find(function (e){
-            if(e.getId()== rowCusId){
+        let deleteCustomer = confirm("Do you want to delete this customer?");
+        if (deleteCustomer.valueOf()) {
+            let rowCusId = $(this).children(':first-child').html();
+            customers.find(function (e) {
+                if (e.getId() == rowCusId) {
 
-                customers.splice(customers.indexOf(e),1);
-            }
-        });
+                    customers.splice(customers.indexOf(e), 1);
+                }
+            });
 
-        loadAllCustomers();
-        clearCustomer();
+            loadAllCustomers();
+            clearCustomer();
+        }
     });
 }
 
@@ -168,15 +203,24 @@ function clearCustomer() {
     enableAddCustomer();
 }
 
-function findCustomer(){
-    customers.find(function (e){
-        if(e.getId()==$("#CustomerID").val()){
+function findCustomer() {
+    customers.find(function (e) {
+        if (e.getId() == $("#CustomerID").val()) {
             $("#cusId").val(e.getId());
             $("#name").val(e.getName());
             $("#address").val(e.getAddress());
             $("#tel").val(e.getTel());
         }
     });
+}
+
+function customerNotExist(){
+    for (let customer of customers) {
+        if (customer.getId()==$("#cusId").val()){
+            return false;
+        }
+    }
+    return true;
 }
 
 $("#AddCustomer").click(function () {
@@ -198,4 +242,6 @@ $("#searchCustomer").click(function () {
 
 $("#cancelCustomer").click(function () {
     clearCustomer();
+    generateCustomerId();
 });
+

@@ -3,85 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <title>WEB PROJECTS</title>
-  <style>
-    div{
-        position: relative;
-      width: 32vh;
-      height: 32vh;
-        border-radius: 30px;
-        background-color: #6f6f6f;
-        text-align: center;
-        opacity: 95%;
-    }
-    section{
-        width: 100%;
-        height: max-content;
-        display: flex;
-        justify-content: space-evenly;
-        position: absolute;
+    <style>
 
-    }
+        div {
 
-    section:nth-child(1){
-        top:15vh;
-    }
-    section:nth-child(2){
-        bottom:10vh;
-    }
-    h3{
+            position: relative;
+            width: 25vh;
+            height: 25vh;
+            border-radius: 15px;
+            text-align: center;
+            opacity: 95%;
+            margin: 3.3vh;
+        }
 
-        font-family: sans-serif;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        margin: auto;
-        width: max-content;
-        height: max-content;
-    }
-    a{
-        font-size: 1.5em;
-        color: #e0e0e0;
-    }
-    a:hover{
-        color: #000000;
-        font-size: 1.6em;
+        .layout {
+            background-color: #165B33;
+        }
 
+        .transition {
+            background-color: goldenrod;
+        }
 
-    }
+        .animation {
+            background-color: maroon;
+        }
 
-    div:hover{
+        body > section {
+            width: 90%;
+            height: 87%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            position: absolute;
+        }
 
-        opacity: 100%;
-    }
+        section {
+            height: max-content;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
 
-body{
-    background-image: url("assets/web.jpg");
-    background-size: cover;
-}
-  </style>
+        h3, h4 {
+            font-family: sans-serif;
+            margin: 0;
+        }
+
+        span {
+            justify-content: center;
+            width: max-content;
+            height: max-content;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            position: absolute;
+        }
+
+        a {
+
+            font-size: 1em;
+            color: #e0e0e0;
+        }
+
+        h4 {
+            font-size: 0.9em;
+        }
+
+        h1{
+            font-size: 3em;
+            color: white;
+            text-align: center;
+            margin: 0;
+        }
+        a:hover {
+            color: #000000;
+            font-size: 1.1em;
+        }
+
+        div:hover {
+            opacity: 100%;
+        }
+
+        body {
+            background-color: black;
+            overflow-x: hidden;
+        }
+    </style>
 </head>
 <body>
 
+<h1>CSS</h1>
 <section>
-    <a href="Layouts/01.Assingment/index.html"><div><h3>Layouts <br>Case 01</h3></div></a>
-    <a href="Layouts/02.Assingment/index.html"><div><h3>Layouts <br>Case 02</h3></div></a>
-    <a href="Layouts/03.Assingment/index.html"><div><h3>Layouts <br>Case 03</h3></div></a>
-    <a href="Layouts/04.Assingment/index.html"><div><h3>Layouts <br>Case 04</h3></div></a>
-    <a href="Transitions/Case_01/index.html"><div><h3>Transitions <br> Case 01</h3></div></a>
+    <section>
+        <a href="Layouts/01.Assingment/index.html">
+            <div class="layout"><span><h3>Layouts </h3><h4>Case 01</h4></span></div>
+        </a>
+        <a href="Layouts/02.Assingment/index.html">
+            <div class="layout"><span><h3>Layouts </h3><h4>Case 02</h4></span></div>
+        </a>
+        <a href="Layouts/03.Assingment/index.html">
+            <div class="layout"><span><h3>Layouts </h3><h4>Case 03</h4></span></div>
+        </a>
+        <a href="Layouts/04.Assingment/index.html">
+            <div class="layout"><span><h3>Layouts </h3><h4>Case 04</h4></span></div>
+        </a>
+
+    </section>
+
+    <section>
+        <a href="Transitions/Case_01/index.html">
+            <div class="transition"><span><h3>Transitions</h3><h4>Case 01</h4></span></div>
+        </a>
+
+        <a href="Transitions/Case_02/index.html">
+            <div class="transition"><span><h3>Transitions</h3><h4>Case 02</h4></span></div>
+        </a>
+
+    </section>
+
+    <section>
+        <a href="Animations/Case_01/index.html">
+            <div class="animation"><span><h3>Animation</h3><h4>Case 01</h4></span></div>
+        </a>
+        <a href="Animations/Case_02/index.html">
+            <div class="animation"><span><h3>Animation </h3><h4>Case 02</h4></span></div>
+        </a>
+        <a href="Animations/Case_03/index.html">
+            <div class="animation"><span><h3>Animation </h3><h4>Case 03</h4></span></div>
+        </a>
+        <a href="Animations/Case_04/index.html">
+            <div class="animation"><span><h3>Animation</h3><h4>Case 04</h4></span></div>
+        </a>
+    </section>
 </section>
 
-
-
-
-<section>
-    <a href="Transitions/Case_02/index.html"><div><h3>Transitions <br> Case 02</h3></div></a>
-    <a href="Animations/Case_01/index.html"><div><h3>Animation <br> Case 01</h3></div></a>
-    <a href="Animations/Case_02/index.html"><div><h3>Animation <br> Case 02</h3></div></a>
-    <a href="Animations/Case_03/index.html"><div><h3>Animation <br> Case 03</h3></div></a>
-    <a href="Animations/Case_04/index.html"><div><h3>Animation <br> Case 04</h3></div></a>
-</section>
 
 </body>
 </html>

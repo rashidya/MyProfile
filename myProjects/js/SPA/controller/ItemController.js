@@ -1,6 +1,6 @@
 /*Item*/
 
-
+generateItemId();
 
 var regExItemId = /^(I-)[0-9]{3}$/;
 var regExItemName = /^([A-z0-9/,\s]{3,})$/;
@@ -13,11 +13,13 @@ $("#itemId").keyup(function (e) {
     enableAddItem();
     if (regExItemId.test($("#itemId").val())) {
         $("#itemId").css('border-color', 'Green');
+        $("#errorItemId").css('display', 'none');
         if (e.key == "Enter") {
             $("#itemName").focus();
         }
     } else {
         $("#itemId").css('border-color', 'Red');
+        $("#errorItemId").css('display', 'block');
     }
 
 });
@@ -26,11 +28,13 @@ $("#itemName").keyup(function (e) {
     enableAddItem();
     if (regExItemName.test($("#itemName").val())) {
         $("#itemName").css('border-color', 'Green');
+        $("#errorItem").css('display', 'none');
         if (e.key == "Enter") {
             $("#price").focus();
         }
     } else {
         $("#itemName").css('border-color', 'Red');
+        $("#errorItem").css('display', 'block');
     }
 });
 
@@ -38,11 +42,13 @@ $("#price").keyup(function (e) {
     enableAddItem();
     if (regExPrice.test($("#price").val())) {
         $("#price").css('border-color', 'Green');
+        $("#errorPrice").css('display', 'none');
         if (e.key == "Enter") {
             $("#Qty").focus();
         }
     } else {
         $("#price").css('border-color', 'Red');
+        $("#errorPrice").css('display', 'block');
     }
 
 });
@@ -51,6 +57,7 @@ $("#Qty").keyup(function (e) {
     enableAddItem();
     if (regExQty.test($("#Qty").val())) {
         $("#Qty").css('border-color', 'Green');
+        $("#errorQty").css('display', 'none');
 
         if ($('#AddItem').is(':enabled') && e.key == "Enter") {
             addItem();
@@ -58,11 +65,28 @@ $("#Qty").keyup(function (e) {
         }
     } else {
         $("#Qty").css('border-color', 'Red');
+        $("#errorQty").css('display', 'block');
     }
 });
 
+function generateItemId(){
+    var tempId;
+    if (items.length!=0){
+
+        var id =items[items.length-1].getId();
+        var temp=id.split("-")[1];
+        temp++;
+        tempId = (temp<10)? "I-00"+ temp : (temp<100) ? "I-0"+temp :"I-"+temp;
+
+    }else{
+        tempId="I-001";
+    }
+    $("#itemId").val(tempId);
+}
+
+
 function enableAddItem() {
-    if (regExItemId.test($("#itemId").val()) && regExItemName.test($("#itemName").val()) && regExPrice.test($("#price").val()) && regExQty.test($("#Qty").val())) {
+    if (itemNotExist() && regExItemId.test($("#itemId").val()) && regExItemName.test($("#itemName").val()) && regExPrice.test($("#price").val()) && regExQty.test($("#Qty").val())) {
         $("#AddItem").attr('disabled', false);
     } else {
         $("#AddItem").attr('disabled', true);
@@ -70,42 +94,54 @@ function enableAddItem() {
 }
 
 function addItem() {
-    let itemName = $("#itemName").val();
-    let itemId = $("#itemId").val();
-    let itemPrice = $("#price").val();
-    let itemQty = $("#Qty").val();
+    let saveItem = confirm("Do you want to save this item?");
+    if (saveItem.valueOf()) {
+        let itemName = $("#itemName").val();
+        let itemId = $("#itemId").val();
+        let itemPrice = $("#price").val();
+        let itemQty = $("#Qty").val();
 
-    items.push(new ItemDTO(itemId,itemName,itemPrice,itemQty));
+        items.push(new ItemDTO(itemId, itemName, itemPrice, itemQty));
 
 
-    loadAllItems();
-    clearItem();
+        loadAllItems();
+        clearItem();
+        generateItemId();
+    }
 
 }
 
 function updateItem() {
-    items.find(function (e){
-        if(e.getId()==$("#itemId").val()){
-            e.setName($("#itemName").val());
-            e.setPrice($("#price").val());
-            e.setQty($("#Qty").val());
-        }
-    });
+    let updateItem = confirm("Do you want to update this item?");
+    if (updateItem.valueOf()) {
+        items.find(function (e) {
+            if (e.getId() == $("#itemId").val()) {
+                e.setName($("#itemName").val());
+                e.setPrice($("#price").val());
+                e.setQty($("#Qty").val());
+            }
+        });
 
-    loadAllItems();
-    clearItem();
+        loadAllItems();
+        clearItem();
+        generateItemId();
+    }
 
 }
 
 function deleteItem() {
-    items.find(function (e){
-        if(e.getId()==$("#itemId").val()){
-            items.splice(items.indexOf(e),1);
-        }
-    });
+    let deleteItem = confirm("Do you want to delete this item?");
+    if (deleteItem.valueOf()) {
+        items.find(function (e) {
+            if (e.getId() == $("#itemId").val()) {
+                items.splice(items.indexOf(e), 1);
+            }
+        });
 
-    loadAllItems();
-    clearItem();
+        loadAllItems();
+        clearItem();
+        generateItemId();
+    }
 
 }
 
@@ -161,6 +197,15 @@ function clearItem() {
     enableAddItem();
 }
 
+function itemNotExist(){
+    for (let item of items) {
+        if (item.getId()==$("#itemId").val()){
+            return false;
+        }
+    }
+    return true;
+}
+
 
 $("#AddItem").click(function () {
     addItem();
@@ -176,5 +221,6 @@ $("#DeleteItem").click(function () {
 
 $("#cancelItem").click(function () {
     clearItem();
+    generateItemId();
 });
 
