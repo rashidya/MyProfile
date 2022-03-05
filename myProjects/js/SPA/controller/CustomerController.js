@@ -1,5 +1,7 @@
 generateCustomerId();
 
+
+
 var regExCustomerId = /^(C-)[0-9]{3}$/;
 var regExPersonName = /^([A-z\s. ]{3,80})$/;
 var regExAddress = /^([A-z0-9/,\s]{3,})$/;
@@ -112,7 +114,7 @@ function addCustomer() {
 
         clearCustomer();
         generateCustomerId();
-        loadAllCustomersAndItems();
+        loadAllCustomerIds();
     }
 
 
@@ -147,6 +149,7 @@ function deleteCustomer() {
         loadAllCustomers();
         clearCustomer();
         generateCustomerId();
+        loadAllCustomerIds();
     }
 }
 
@@ -187,6 +190,7 @@ function loadAllCustomers() {
 
             loadAllCustomers();
             clearCustomer();
+            loadAllCustomerIds();
         }
     });
 }

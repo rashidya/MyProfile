@@ -60,7 +60,7 @@ $("#Qty").keyup(function (e) {
         $("#errorQty").css('display', 'none');
 
         if ($('#AddItem').is(':enabled') && e.key == "Enter") {
-            addItem();
+            saveItem();
             $("#itemId").focus();
         }
     } else {
@@ -84,7 +84,6 @@ function generateItemId(){
     $("#itemId").val(tempId);
 }
 
-
 function enableAddItem() {
     if (itemNotExist() && regExItemId.test($("#itemId").val()) && regExItemName.test($("#itemName").val()) && regExPrice.test($("#price").val()) && regExQty.test($("#Qty").val())) {
         $("#AddItem").attr('disabled', false);
@@ -93,7 +92,8 @@ function enableAddItem() {
     }
 }
 
-function addItem() {
+function saveItem() {
+
     let saveItem = confirm("Do you want to save this item?");
     if (saveItem.valueOf()) {
         let itemName = $("#itemName").val();
@@ -107,6 +107,7 @@ function addItem() {
         loadAllItems();
         clearItem();
         generateItemId();
+        loadAllItemIds();
     }
 
 }
@@ -141,6 +142,7 @@ function deleteItem() {
         loadAllItems();
         clearItem();
         generateItemId();
+        loadAllItemIds();
     }
 
 }
@@ -178,6 +180,7 @@ function loadAllItems(){
 
             loadAllItems();
             clearItem();
+            loadAllItemIds();
         });
     }
 
@@ -206,9 +209,9 @@ function itemNotExist(){
     return true;
 }
 
-
 $("#AddItem").click(function () {
-    addItem();
+    saveItem();
+
 });
 
 $("#UpdateItem").click(function () {

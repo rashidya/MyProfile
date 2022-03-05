@@ -109,7 +109,7 @@
                 <div class="container-fluid">
                     <form class="d-flex ">
                         <input aria-label="Search" class="form-control  me-2" placeholder="Customer ID" type="search">
-                        <button class="btn btn-outline-success" id="searchCustomer" type="btn">Search</button>
+                        <button class="btn btn-outline-success" id="searchCustomer" type="button">Search</button>
                     </form>
 
 
@@ -157,7 +157,7 @@
                     <button class="btn btn-secondary mt-3" id="cancelCustomer" type="button">Cancel</button>
                     <button class="btn btn-danger mt-3" id="DeleteCustomer" type="button">Delete</button>
                     <button class="btn btn-warning text-white mt-3" id="UpdateCustomer" type="button">Update</button>
-                    <button class="btn btn-success mt-3" disabled="true" id="AddCustomer" type="button">Register
+                    <button class="btn btn-success mt-3" disabled id="AddCustomer" type="button">Register
                     </button>
                 </div>
             </form>
@@ -241,7 +241,7 @@
                     <button class="btn btn-secondary mt-3" id="cancelItem" type="button">Cancel</button>
                     <button class="btn btn-danger mt-3" id="DeleteItem" type="button">Delete</button>
                     <button class="btn btn-warning text-white mt-3" id="UpdateItem" type="button">Update</button>
-                    <button class="btn btn-success mt-3" disabled="true" id="AddItem" type="button">Add</button>
+                    <button class="btn btn-success mt-3" disabled id="AddItem" type="button">Add</button>
                 </div>
             </form>
         </section>
@@ -287,13 +287,13 @@
                 <div class="row mb-3">
                     <label class="col-sm-2 col-form-label" for="orderIdPlaceOrder">Order Id</label>
                     <div class="col-sm-10">
-                        <input class="form-control" id="orderIdPlaceOrder" type="text">
+                        <input class="form-control " id="orderIdPlaceOrder" type="text" >
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" for="orderDatePlaceOrder">Order Id</label>
+                    <label class="col-sm-2 col-form-label" for="orderDatePlaceOrder">Date</label>
                     <div class="col-sm-10">
-                        <input class="form-control " id="orderDatePlaceOrder" type="date" >
+                        <input class="form-control " id="orderDatePlaceOrder" type="date"  >
                     </div>
                 </div>
 
@@ -301,8 +301,8 @@
                 <div class="row mb-3">
                     <label class="col-sm-2 col-form-label" for="selectCustomer">Customer</label>
                     <div class="col-sm-10">
-                        <select aria-label="Default select example" class="form-select " id="selectCustomer">
-                            <option selected>Select Customer</option>
+                        <select aria-label="Default select example" class="form-select " id="selectCustomer" >
+
 
                         </select>
                     </div>
@@ -350,13 +350,23 @@
             <section class="row">
                 <form class="container-fluid mt-3 col ">
                     <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label" for="selectCustomer">Item</label>
+                        <div class="col-sm-10">
+                            <select aria-label="Default select example" class="form-select " id="selectItem" >
+
+
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="row mb-3">
                         <label class="col-sm-2 col-form-label" for="itemIdPlaceOrder">Item Id</label>
                         <div class="col-sm-10">
                             <input class="form-control" id="itemIdPlaceOrder" type="text">
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label" for="itemNamePlaceOrder">Item</label>
+                        <label class="col-sm-2 col-form-label" for="itemNamePlaceOrder">Item Name</label>
                         <div class="col-sm-10">
                             <input class="form-control" id="itemNamePlaceOrder" type="text">
                         </div>
@@ -384,6 +394,7 @@
                                 <input class="form-control" id="cusQtyPlaceOrder" type="number">
                             </div>
                         </div>
+                        <small class="text-danger" id="errorCustomerQty" style="display: none">! Wrong format  </small>
                         <div class="text-center justify-content-center">
                             <button class="btn btn-success mt-3" type="button">Add</button>
 
@@ -410,34 +421,13 @@
                     <thead class="bg-secondary text-center">
                     <tr class="text-white">
                         <th scope="col">Item</th>
+                        <th scope="col">Price</th>
                         <th scope="col">Qty</th>
-                        <th scope="col">Uni.Pri.</th>
-                        <th scope="col">Dis.</th>
                         <th scope="col">Tot.</th>
                     </tr>
                     </thead>
-                    <tbody class="text-center">
-                    <tr>
-                        <th scope="row">Tea</th>
-                        <td>2kg</td>
-                        <td>120</td>
-                        <td>-</td>
-                        <td>240</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Tea</th>
-                        <td>2kg</td>
-                        <td>120</td>
-                        <td>-</td>
-                        <td>240</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Tea</th>
-                        <td>2kg</td>
-                        <td>120</td>
-                        <td>-</td>
-                        <td>240</td>
-                    </tr>
+                    <tbody class="text-center" id="cartTbl">
+
                     </tbody>
                 </table>
             </section>
@@ -492,7 +482,6 @@
 
     $("#ItemLink").click(function () {
         $("#navBar").css('backgroundColor', 'Grey');
-        console.log($("#navBar").css('backgroundColor'));
         $("#Item").css('display', 'Block');
         $("#Customer,#PlaceOrder,#Home").css('display', 'none');
 
