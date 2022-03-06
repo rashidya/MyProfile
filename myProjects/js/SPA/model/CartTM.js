@@ -3,7 +3,7 @@ function CartTM(id, name, price, qty,total) {
     this.itemName = name;
     this.itemPrice = price;
     this.itemQty = qty;
-    this.total = qty;
+    this.total = total;
 
     this.getId = function () {
         return this.itemId;

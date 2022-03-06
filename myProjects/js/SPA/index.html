@@ -421,6 +421,7 @@
                     <thead class="bg-secondary text-center">
                     <tr class="text-white">
                         <th scope="col">Item</th>
+                        <th scope="col">Item Name</th>
                         <th scope="col">Price</th>
                         <th scope="col">Qty</th>
                         <th scope="col">Tot.</th>
@@ -437,8 +438,11 @@
         <div class="card col-5 mt-4" style="width: 25rem;">
             <div class="card-body">
                 <h5 class="card-title">Gross Total</h5>
+                <input class="form-control" id="grossTotalPlaceOrder" type="number">
                 <h5 class="card-title">Discount</h5>
+                <input class="form-control" id="discountPlaceOrder" type="number">
                 <h5 class="card-title">Net Total</h5>
+                <input class="form-control" id="netTotalPlaceOrder" type="number">
                 <div class="text-end">
                     <button class="btn btn-danger mt-3" type="button">Cancel</button>
                     <button class="btn btn-success mt-3" type="button">Place Order</button>
@@ -880,6 +884,7 @@
 <script src="model/ItemDTO.js"></script>
 <script src="model/CustomerDTO.js"></script>
 <script src="model/OrderDTO.js"></script>
+<script src="model/CartTM.js"></script>
 </body>
 
 </html>
