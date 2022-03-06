@@ -85,6 +85,7 @@ $("#selectCustomer").on('change', function () {
 
 
 });
+
 function saveOrder() {
 
 }
@@ -109,5 +110,73 @@ $("#cusQtyPlaceOrder").keyup(function (e){
 /*$("#selectCustomer").off('click');*/
 
 function addItemToCart(){
+   let itemCode= $("#itemIdPlaceOrder").val();
+   let itemName= $("#itemNamePlaceOrder").val();
+   let price= $("#pricePlaceOrder").val();
+   let cusQty= $("#cusQtyPlaceOrder").val();
+   let total=cusQty*price;
+
+    cartItems.find(function (e){
+            if (e.getId()== itemCode){
+                let index=cartItems.indexOf(e);
+                let newQty=e.getQty()+cusQty;
+                cartItems[index].setCusQty(newQty);
+                cartItems[index].setTotal(newQty*price);
+                loadCartTable();
+                clearItemFields();
+                return;
+
+            }
+
+    });
+
+    cartItems.push(new CartTM(itemCode,itemName,price,cusQty,total));
+    loadCartTable();
+    clearItemFields();
+
 
 }
+
+function loadCartTable(){
+
+    $("#cartTbl>tr").remove();
+    for (let cartItem of cartItems) {
+
+        let row= `<tr><td>${cartItem.getId()}</td><td>${cartItem.getName()}</td><td>${cartItem.getName()}</td><td>${cartItem.getQty()}</td><td>${cartItem.getPrice()}</td><td>${cartItem.getTotal()}</td></tr>`;
+        $("#cartTbl").append(row);
+    }
+
+
+    $("#cartTbl>tr").off('click');
+
+    $("#cartTbl>tr").click(function (){
+        let id = $(this).children(':first-child').html();
+        let itemName = $(this).children(':nth-child(2)').html();
+        let price = $(this).children(':nth-child(4)').html();
+        let qty = $(this).children(':nth-child(3)').html();
+
+        $("#itemIdPlaceOrder").val(id);
+        $("#itemNamePlaceOrder").val(itemName);
+        $("#pricePlaceOrder").val(price);
+        $("#cusQtyPlaceOrder").val(qty);
+
+        items.find(function (e){
+            if (e.getId()==id){
+                $("#qtyPlaceOrder").val(e.getQty());
+            }
+        });
+
+    });
+}
+
+function clearItemFields(){
+    $("#itemIdPlaceOrder").val("");
+    $("#itemNamePlaceOrder").val("");
+    $("#pricePlaceOrder").val("");
+    $("#cusQtyPlaceOrder").val("");
+    $("#qtyPlaceOrder").val("");
+}
+
+$("#addCart").click(function (){
+    addItemToCart();
+});
