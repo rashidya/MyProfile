@@ -101,7 +101,7 @@
 <section class="container-fluid" id="Customer">
 
     <section class="row container-fluid m-0">
-        <div class="col-4  d-flex justify-content-center align-self-lg-center">
+        <div class="col-3  d-flex justify-content-center align-self-lg-center ">
             <img alt="image" class="img-fluid rounded-start w-75" src="assets/images/shopping.png">
         </div>
         <section class="container-fluid col">
@@ -271,149 +271,163 @@
 <section class="container-fluid" id="PlaceOrder">
     <section class="row">
         <section class="col">
-            <nav class="navbar navbar-light bg-dark mt-2 ">
-                <div class="container-fluid">
-                    <form class="d-flex">
-                        <input aria-label="Search" class="form-control me-2" placeholder="Customer ID" type="search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+            <div class=" bg-secondary mt-3 ">
+               <label class="text-white m-2 fw-bold">Invoice Detail</label>
+            </div>
 
-                    </form>
-                </div>
-            </nav>
-
-            <form class="container-fluid mt-2">
-
+            <form class="container-fluid mt-3">
 
                 <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" for="orderIdPlaceOrder">Order Id</label>
-                    <div class="col-sm-10">
-                        <input class="form-control " id="orderIdPlaceOrder" type="text" >
+                    <label class="col-sm-3 col-form-label" for="orderIdPlaceOrder">Order Id</label>
+                    <div class="col-sm-3">
+                        <input class="form-control " id="orderIdPlaceOrder" type="text">
                     </div>
-                </div>
-                <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" for="orderDatePlaceOrder">Date</label>
-                    <div class="col-sm-10">
-                        <input class="form-control " id="orderDatePlaceOrder" type="date"  >
+                    <label class="col-sm-1 col-form-label" for="orderDatePlaceOrder">Date</label>
+                    <div class="col-sm-5">
+                        <input class="form-control " id="orderDatePlaceOrder" type="date">
                     </div>
                 </div>
 
-
                 <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" for="selectCustomer">Customer</label>
-                    <div class="col-sm-10">
-                        <select aria-label="Default select example" class="form-select " id="selectCustomer" >
-
-
-                        </select>
+                    <label class="col-sm-3 col-form-label " for="selectCustomer">Customer</label>
+                    <div class="col-sm-3">
+                        <select aria-label="Default select example" class="form-select " id="selectCustomer"></select>
                     </div>
 
-                </div>
-
-                <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" for="cusIdPlaceOrder">Customer Id</label>
-                    <div class="col-sm-10">
+                    <label class="col-sm-3 col-form-label" for="cusIdPlaceOrder">Customer Id</label>
+                    <div class="col-sm-3">
                         <input class="form-control" id="cusIdPlaceOrder" type="text">
                     </div>
                 </div>
+
+
                 <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" for="cusNamePlaceOrder">Name</label>
-                    <div class="col-sm-10">
+                    <label class="col-sm-3 col-form-label" for="cusNamePlaceOrder">Name</label>
+                    <div class="col-sm-9">
                         <input class="form-control" id="cusNamePlaceOrder" type="text">
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" for="cusAddressPlaceOrder">Address</label>
-                    <div class="col-sm-10">
+                    <label class="col-sm-3 col-form-label" for="cusAddressPlaceOrder">Address</label>
+                    <div class="col-sm-9">
                         <input class="form-control" id="cusAddressPlaceOrder" type="text">
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" for="cusTelPlaceOrder">Contact No.</label>
-                    <div class="col-sm-10">
+                    <label class="col-sm-3 col-form-label" for="cusTelPlaceOrder">Tel</label>
+                    <div class="col-sm-9">
                         <input class="form-control" id="cusTelPlaceOrder" type="tel">
                     </div>
                 </div>
             </form>
         </section>
         <section class="col">
-            <nav class="navbar navbar-light bg-dark mt-2">
-                <div class="container-fluid">
-                    <form class="d-flex">
-                        <input aria-label="Search" class="form-control me-2" placeholder="Item ID" type="search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+            <div class=" bg-secondary mt-3 ">
+                <label class="text-white m-2 fw-bold">Item Detail</label>
+            </div>
 
-                    </form>
-                </div>
-            </nav>
 
 
             <section class="row">
                 <form class="container-fluid mt-3 col ">
                     <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label" for="selectCustomer">Item</label>
-                        <div class="col-sm-10">
-                            <select aria-label="Default select example" class="form-select " id="selectItem" >
-
-
-                            </select>
+                        <label class="col-sm-3 col-form-label" for="selectCustomer">Item</label>
+                        <div class="col-sm-3">
+                            <select aria-label="Default select example" class="form-select " id="selectItem"></select>
                         </div>
-
-                    </div>
-                    <div class="row mb-3">
                         <label class="col-sm-2 col-form-label" for="itemIdPlaceOrder">Item Id</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-4">
                             <input class="form-control" id="itemIdPlaceOrder" type="text">
                         </div>
                     </div>
+
                     <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label" for="itemNamePlaceOrder">Item Name</label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-3 col-form-label" for="itemNamePlaceOrder">Item Name</label>
+                        <div class="col-sm-9">
                             <input class="form-control" id="itemNamePlaceOrder" type="text">
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label" for="pricePlaceOrder">Unit Price</label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-3 col-form-label" for="pricePlaceOrder">Unit Price</label>
+                        <div class="col-sm-9">
                             <input class="form-control" id="pricePlaceOrder" type="number">
                         </div>
                     </div>
 
                     <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label" for="qtyPlaceOrder">Qty on Hand</label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-3 col-form-label" for="qtyPlaceOrder">Qty on Hand</label>
+                        <div class="col-sm-9">
                             <input class="form-control" id="qtyPlaceOrder" type="number">
                         </div>
                     </div>
 
-                </form>
-                <div class=" col-2 mt-2 ">
-                    <div class="">
-                        <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label" for="cusQtyPlaceOrder">Qty</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" id="cusQtyPlaceOrder" type="number">
-                            </div>
-                        </div>
-                        <small class="text-danger" id="errorCustomerQty" style="display: none">! Wrong format  </small>
-                        <div class="text-center justify-content-center">
-                            <button class="btn btn-success mt-3" type="button" id="addCart">Add</button>
 
+                    <div class="row mb-3 mt-3 text-center">
+                        <label class="col-sm-4 col-form-label" for="cusQtyPlaceOrder">Qty</label>
+                        <div class="col-sm-4">
+                            <input class="form-control" id="cusQtyPlaceOrder" type="number">
+                            <small class="text-danger" id="errorCustomerQty" style="display: none">! Wrong
+                                format </small>
                         </div>
+
+                        <button class="col-sm-2 btn btn-success " id="addCart" type="button">Add</button>
+
                     </div>
-                </div>
+
+
+                </form>
+
             </section>
 
 
         </section>
+
+        <div class=" col-3 mt-2" >
+
+                <form class="container-fluid mt-3 col ">
+                    <div class="row mb-3">
+                        <h5 class="col-sm-4 col-form-label" >Gross Total</h5>
+                        <label class="col-sm-7 col-form-label text-end" id="grossTotalPlaceOrder">0.00 </label>
+
+                    </div>
+
+                    <div class="row mb-3">
+                        <h5 class="col-sm-4 col-form-label" for="netTotalPlaceOrder">Net Total</h5>
+                        <label class="col-sm-7 col-form-label text-end" id="netTotalPlaceOrder" >0.00 </label>
+
+                    </div>
+
+
+                    <div class="row mb-3">
+                        <h5 class="col-sm-4 col-form-label" >Discount</h5>
+                        <div class="col-sm-7">
+                            <input class="form-control" id="discountPlaceOrder" type="number">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <h5 class="col-sm-4 col-form-label" for="cashPlaceOrder">Cash</h5>
+                        <div class="col-sm-7">
+                            <input class="form-control" id="cashPlaceOrder" type="number">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <h5 class="col-sm-4 col-form-label" >Balance</h5>
+                        <label class="col-sm-7 col-form-label text-end" id="balancePlaceOrder" >0.00 </label>
+                    </div>
+
+
+
+                </form>
+
+
+                <div class="text-center mt-2">
+                    <button class="btn btn-danger " type="button">Cancel</button>
+                    <button class="btn btn-success " type="button">Place Order</button>
+                </div>
+            </div>
+
     </section>
-    <nav class="navbar navbar-light bg-dark">
-        <div class="container-fluid">
-            <form class="d-flex">
-                <input aria-label="Search" class="form-control me-2" placeholder="Order ID" type="search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
+
     <section class="row">
         <section class="col">
             <section class="container-fluid mt-2">
@@ -434,21 +448,6 @@
             </section>
 
         </section>
-
-        <div class="card col-5 mt-4" style="width: 25rem;">
-            <div class="card-body">
-                <h5 class="card-title">Gross Total</h5>
-                <input class="form-control" id="grossTotalPlaceOrder" type="number">
-                <h5 class="card-title">Discount</h5>
-                <input class="form-control" id="discountPlaceOrder" type="number">
-                <h5 class="card-title">Net Total</h5>
-                <input class="form-control" id="netTotalPlaceOrder" type="number">
-                <div class="text-end">
-                    <button class="btn btn-danger mt-3" type="button">Cancel</button>
-                    <button class="btn btn-success mt-3" type="button">Place Order</button>
-                </div>
-            </div>
-        </div>
 
 
     </section>
