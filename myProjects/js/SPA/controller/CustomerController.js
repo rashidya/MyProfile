@@ -6,88 +6,97 @@ var regExAddress = /^([A-z0-9/,\s]{3,})$/;
 var regExTel = /^([0][0-9]{9}|[0][0-9]{2}[-\s][0-9]{7})$/;
 
 
-function validateCusId(){
+function validateCusId(e){
     if (regExCustomerId.test($("#cusId").val())) {
         $("#cusId").css('border-color', 'Green');
         $("#errorCustomerId").css('display', 'none');
-        if (e.key == "Enter") {
+        if (e == "Enter") {
             $("#name").focus();
         }
-return true;
+
     } else {
         $("#cusId").css('border-color', 'Red');
         $("#errorCustomerId").css('display', 'block');
-        return false;
+
     }
 }
 
-function validateCusName(){
+function validateCusName(e){
     if (regExPersonName.test($("#name").val())) {
         $("#name").css('border-color', 'Green');
         $("#errorCustomerName").css('display', 'none');
-        if (e.key == "Enter") {
+        if (e == "Enter") {
             $("#address").focus();
         }
-return true;
+
     } else {
         $("#name").css('border-color', 'Red');
         $("#errorCustomerName").css('display', 'block');
-        return false;
+
     }
 
 }
 
-function validateCusAddress(){
+function validateCusAddress(e){
     if (regExAddress.test($("#address").val())) {
         $("#address").css('border-color', 'Green');
         $("#errorCustomerAddress").css('display', 'none');
-        if (e.key == "Enter") {
+        if (e == "Enter") {
             $("#tel").focus();
         }
-        return true;
+
     } else {
-        return false;
+
         $("#address").css('border-color', 'Red');
         $("#errorCustomerAddress").css('display', 'block');
     }
 }
 
-function validateCusTel(){
+function validateCusTel(e){
     if (regExTel.test($("#tel").val())) {
         $("#tel").css('border-color', 'Green');
         $("#errorCustomerTel").css('display', 'none');
 
-        if ($('#AddCustomer').is(':enabled') && e.key == "Enter") {
+        if ($('#AddCustomer').is(':enabled') && e == "Enter") {
             addCustomer();
             $("#cusId").focus();
         }
-        return true;
+
     } else {
-        return true;
+
         $("#tel").css('border-color', 'Red');
         $("#errorCustomerTel").css('display', 'block');
     }
 }
 
+function enableAddCustomer() {
+    if (customerNotExist() && regExCustomerId.test($("#cusId").val()) && regExPersonName.test($("#name").val()) && regExAddress.test($("#address").val()) && regExTel.test($("#tel").val())) {
+        $("#AddCustomer").attr('disabled', false);
+    } else {
+        $("#AddCustomer").attr('disabled', true);
+    }
+}
+
+
 $("#cusId").keyup(function (e) {
     enableAddCustomer();
-   validateCusId();
+   validateCusId(e.key);
 });
 
 $("#name").keyup(function (e) {
     enableAddCustomer();
-    validateCusName();
+    validateCusName(e.key);
 
 });
 
 $("#address").keyup(function (e) {
     enableAddCustomer();
-  validateCusAddress();
+  validateCusAddress(e.key);
 });
 
 $("#tel").keyup(function (e) {
     enableAddCustomer();
-    validateCusTel();
+    validateCusTel(e.key);
 
 });
 
@@ -175,13 +184,6 @@ function generateCustomerId() {
     $("#cusId").val(tempId);
 }
 
-function enableAddCustomer() {
-    if (customerNotExist() && validateCusId() && validateCusName() && validateCusAddress() && validateCusTel()) {
-        $("#AddCustomer").attr('disabled', false);
-    } else {
-        $("#AddCustomer").attr('disabled', true);
-    }
-}
 
 function loadAllCustomers() {
     $("#cusTbl>tr").remove();

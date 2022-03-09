@@ -2,7 +2,7 @@ generateOrderId();
 loadAllItemIds();
 loadAllCustomerIds();
 
-
+$("#cartTbl").css('overflow')
 var regDecimal = /^([0-9.]{1,})$/;
 var regExOrderId = /^(OD-)[0-9]{3}$/;
 var regExCusQty = /^([0-9]{1,})$/;
@@ -60,12 +60,6 @@ $("#orderIdPlaceOrder").keyup(function (e) {
    if (validateOrderId()) {
        findOrder();
    }
-});
-
-$("#orderIdPlaceOrder").keyup(function () {
-
-
-
 });
 
 
@@ -140,7 +134,7 @@ function findOrder(){
 }
 
 
-function validateAll() {
+function validateAllPlaceOrder() {
     let today = new Date().getDate();
 
     if (validateOrderId()) {
@@ -412,7 +406,7 @@ $("#addCart").click(function () {
 });
 
 $("#btnPlaceOrder").click(function () {
-    if (validateAll()){
+    if (validateAllPlaceOrder()){
         placeOrder();
     }
 

@@ -6,91 +6,101 @@ var regExPrice = /^([0-9.]{1,})$/;
 var regExQty = /^([0-9]{1,})$/;
 
 
-function validateItemId(){
+function validateItemId(event) {
     if (regExItemId.test($("#itemId").val())) {
         $("#itemId").css('border-color', 'Green');
         $("#errorItemId").css('display', 'none');
-        if (e.key == "Enter") {
+        if (event === "Enter") {
             $("#itemName").focus();
         }
-        return true;
+
     } else {
         $("#itemId").css('border-color', 'Red');
         $("#errorItemId").css('display', 'block');
-        return false;
+
     }
 }
 
-function validateItemName(){
+function validateItemName(event) {
     if (regExItemName.test($("#itemName").val())) {
         $("#itemName").css('border-color', 'Green');
         $("#errorItem").css('display', 'none');
-        if (e.key == "Enter") {
+        if (event == "Enter") {
             $("#price").focus();
         }
-        return true;
+
     } else {
         $("#itemName").css('border-color', 'Red');
         $("#errorItem").css('display', 'block');
-        return false;
+
     }
 }
 
-function validatePrice(){
+function validatePrice(event) {
     if (regExPrice.test($("#price").val())) {
         $("#price").css('border-color', 'Green');
         $("#errorPrice").css('display', 'none');
-        if (e.key == "Enter") {
+        if (event == "Enter") {
             $("#Qty").focus();
         }
-        return true;
+
     } else {
         $("#price").css('border-color', 'Red');
         $("#errorPrice").css('display', 'block');
-        return false;
+
     }
 
 }
 
-function validateQty(){
+function validateQty(event) {
     if (regExQty.test($("#Qty").val())) {
         $("#Qty").css('border-color', 'Green');
         $("#errorQty").css('display', 'none');
 
-        if ($('#AddItem').is(':enabled') && e.key == "Enter") {
+        if ($('#AddItem').is(':enabled') && event == "Enter") {
             saveItem();
             $("#itemId").focus();
         }
-        return true;
+
     } else {
         $("#Qty").css('border-color', 'Red');
         $("#errorQty").css('display', 'block');
-        return true;
+
     }
 }
 
+function enableAddItem() {
+    if (itemNotExist() && regExItemId.test($("#itemId").val()) && regExItemName.test($("#itemName").val()) && regExPrice.test($("#price").val()) &&regExQty.test($("#Qty").val()) ) {
+        $("#AddItem").attr('disabled', false);
+    } else {
+        $("#AddItem").attr('disabled', true);
+    }
+}
+
+
+
+
 $("#itemId").keyup(function (e) {
     enableAddItem();
-   validateItemId();
+    validateItemId(e.key);
 
 });
 
 $("#itemName").keyup(function (e) {
     enableAddItem();
-    validateItemName();
+    validateItemName(e.key);
 });
 
 $("#price").keyup(function (e) {
     enableAddItem();
-   validatePrice();
+    validatePrice(e.key);
 
 });
 
 $("#Qty").keyup(function (e) {
     enableAddItem();
-    validateQty();
+    validateQty(e.key);
 });
-
 
 
 function saveItem() {
@@ -160,32 +170,25 @@ function deleteItem() {
 }
 
 
-function generateItemId(){
+function generateItemId() {
     var tempId;
-    if (items.length!=0){
+    if (items.length != 0) {
 
-        var id =items[items.length-1].getId();
-        var temp=id.split("-")[1];
+        var id = items[items.length - 1].getId();
+        var temp = id.split("-")[1];
         temp++;
-        tempId = (temp<10)? "I-00"+ temp : (temp<100) ? "I-0"+temp :"I-"+temp;
+        tempId = (temp < 10) ? "I-00" + temp : (temp < 100) ? "I-0" + temp : "I-" + temp;
 
-    }else{
-        tempId="I-001";
+    } else {
+        tempId = "I-001";
     }
     $("#itemId").val(tempId);
 }
 
-function enableAddItem() {
-    if (itemNotExist() && validateItemId() && validateItemName() && validatePrice() && validateQty()) {
-        $("#AddItem").attr('disabled', false);
-    } else {
-        $("#AddItem").attr('disabled', true);
-    }
-}
 
-function itemNotExist(){
+function itemNotExist() {
     for (let item of items) {
-        if (item.getId()==$("#itemId").val()){
+        if (item.getId() == $("#itemId").val()) {
             return false;
 
         }
@@ -193,7 +196,7 @@ function itemNotExist(){
     return true;
 }
 
-function loadAllItems(){
+function loadAllItems() {
     $("#itemTbl>tr").remove();
 
     for (let item of items) {
@@ -217,10 +220,10 @@ function loadAllItems(){
         });
 
         $("#itemTbl>tr").dblclick(function () {
-           var itemRowId =$(this).children(':first-child').html();
-            items.find(function (e){
-                if(e.getId()==itemRowId){
-                    items.splice(items.indexOf(e),1);
+            var itemRowId = $(this).children(':first-child').html();
+            items.find(function (e) {
+                if (e.getId() == itemRowId) {
+                    items.splice(items.indexOf(e), 1);
                 }
             });
 
@@ -229,7 +232,6 @@ function loadAllItems(){
             loadAllItemIds();
         });
     }
-
 
 
 }
@@ -245,7 +247,6 @@ function clearItem() {
     $("#Qty").css('border-color', 'Silver');
     enableAddItem();
 }
-
 
 
 $("#AddItem").click(function () {
