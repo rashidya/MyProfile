@@ -98,8 +98,8 @@ function saveItem() {
     if (saveItem.valueOf()) {
         let itemName = $("#itemName").val();
         let itemId = $("#itemId").val();
-        let itemPrice = $("#price").val();
-        let itemQty = $("#Qty").val();
+        let itemPrice = parseFloat($("#price").val());
+        let itemQty = parseInt($("#Qty").val());
 
         items.push(new ItemDTO(itemId, itemName, itemPrice, itemQty));
 

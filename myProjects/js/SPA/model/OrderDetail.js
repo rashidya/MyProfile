@@ -1,4 +1,4 @@
-function CartTM(id, name, price, qty,total) {
+function OrderDetail(id, name, price, qty, total) {
     this.itemId = id;
     this.itemName = name;
     this.itemPrice = price;

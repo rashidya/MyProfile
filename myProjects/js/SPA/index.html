@@ -366,14 +366,13 @@
                         <label class="col-sm-4 col-form-label" for="cusQtyPlaceOrder">Qty</label>
                         <div class="col-sm-4">
                             <input class="form-control" id="cusQtyPlaceOrder" type="number">
-                            <small class="text-danger" id="errorCustomerQty" style="display: none">! Wrong
-                                format </small>
                         </div>
 
                         <button class="col-sm-2 btn btn-success " id="addCart" type="button">Add</button>
 
                     </div>
-
+                    <small class="text-danger d-flex justify-content-center" id="errorCustomerQty" ></small>
+                    <small class="text-danger d-flex justify-content-center" id="errorOverCustomerQty" ></small>
 
                 </form>
 
@@ -405,7 +404,7 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <h5 class="col-sm-4 col-form-label" for="cashPlaceOrder">Cash</h5>
+                        <h5 class="col-sm-4 col-form-label" >Cash</h5>
                         <div class="col-sm-7">
                             <input class="form-control" id="cashPlaceOrder" type="number">
                         </div>
@@ -421,8 +420,8 @@
 
 
                 <div class="text-center mt-2">
-                    <button class="btn btn-danger " type="button">Cancel</button>
-                    <button class="btn btn-success " type="button">Place Order</button>
+                    <button class="btn btn-danger " type="button" id="btnCancelPlaceOrder">Cancel</button>
+                    <button class="btn btn-success " type="button" id="btnPlaceOrder">Place Order</button>
                 </div>
             </div>
 
@@ -882,8 +881,8 @@
 <script src="controller/PlaceOrderController.js"></script>
 <script src="model/ItemDTO.js"></script>
 <script src="model/CustomerDTO.js"></script>
-<script src="model/OrderDTO.js"></script>
-<script src="model/CartTM.js"></script>
+<script src="model/Order.js"></script>
+<script src="model/OrderDetail.js"></script>
 </body>
 
 </html>

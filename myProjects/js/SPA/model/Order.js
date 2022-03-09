@@ -1,9 +1,9 @@
-function OrderDTO(id,date,cusId,total){
+function Order(id, date, cusId, orderItems){
 
     this.orderId=id;
     this.orderDate=date;
     this.orderCusId=cusId;
-    this.orderTotal=total;
+    this.orderItems=orderItems;
 
     this.getId = function () {
         return this.orderId;
@@ -26,11 +26,11 @@ function OrderDTO(id,date,cusId,total){
     this.setCusId = function (_cusId) {
         this.orderCusId = _cusId;
     }
-    this.getTotal = function () {
-        return this.orderTotal;
+    this.getOrderItems = function () {
+        return this.orderItems;
     }
 
-    this.setTotal= function (_total) {
-        this.orderTotal = _total ;
+    this.setOrderItems= function (_orderItems) {
+        this.orderItems = _OrderItems ;
     }
 }
