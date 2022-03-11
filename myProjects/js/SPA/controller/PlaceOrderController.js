@@ -101,8 +101,9 @@ function placeOrder() {
     let orderId = $("#orderIdPlaceOrder").val();
     let orderDate = $("#orderDatePlaceOrder").val();
     let orderCusId = $("#cusIdPlaceOrder").val();
+    let orderTotal = $("#netTotalPlaceOrder").val();
 
-    orders.push(new Order(orderId, orderDate, orderCusId, cartItems));
+    orders.push(new Order(orderId, orderDate, orderCusId, cartItems,orderTotal));
     for (let cartItem of cartItems) {
         for (let i = 0; i < items.length; i++) {
             if (cartItem.getId()===items[i].getId()){
@@ -119,6 +120,8 @@ function findOrder(){
     orders.find(function (o) {
         if (o.getId() === $("#orderIdPlaceOrder").val()) {
             $("#orderDatePlaceOrder").val(o.getDate());
+            $("#netTotalPlaceOrder").val(o.getTotal());
+            $("#grossTotalPlaceOrder").val(o.getTotal());
             customers.find(function (c) {
                 if (c.getId() === o.getCusId()) {
                     $("#cusIdPlaceOrder").val(c.getId());
@@ -127,6 +130,7 @@ function findOrder(){
                     $("#cusTelPlaceOrder").val(c.getTel());
                 }
             });
+
             cartItems = o.getOrderItems();
             loadCartTable();
         }
@@ -302,7 +306,7 @@ function addItemToCart() {
     for (let i = 0; i < cartItems.length; i++) {
         if (cartItems[i].getId() === itemCode) {
             let newQty
-            if ($("#addCart").text() === "Add") {
+            if (!isNaN(itemCode) && ("#addCart").text() === "Add") {
                 newQty = parseInt(cartItems[i].getQty()) + parseInt(cusQty);
             } else {
                 newQty = cusQty;

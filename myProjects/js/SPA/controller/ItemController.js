@@ -220,16 +220,20 @@ function loadAllItems() {
         });
 
         $("#itemTbl>tr").dblclick(function () {
-            var itemRowId = $(this).children(':first-child').html();
-            items.find(function (e) {
-                if (e.getId() == itemRowId) {
-                    items.splice(items.indexOf(e), 1);
-                }
-            });
+            let deleteItem = confirm("Do you want to delete this item?");
+            if(deleteItem){
+                var itemRowId = $(this).children(':first-child').html();
+                items.find(function (e) {
+                    if (e.getId() == itemRowId) {
+                        items.splice(items.indexOf(e), 1);
+                    }
+                });
 
-            loadAllItems();
-            clearItem();
-            loadAllItemIds();
+                loadAllItems();
+                clearItem();
+                loadAllItemIds();
+            }
+
         });
     }
 

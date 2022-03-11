@@ -1,9 +1,10 @@
-function Order(id, date, cusId, orderItems){
+function Order(id, date, cusId, orderItems,orderTotal){
 
     this.orderId=id;
     this.orderDate=date;
     this.orderCusId=cusId;
     this.orderItems=orderItems;
+    this.orderTotal=orderTotal;
 
     this.getId = function () {
         return this.orderId;
@@ -32,5 +33,13 @@ function Order(id, date, cusId, orderItems){
 
     this.setOrderItems= function (_orderItems) {
         this.orderItems = _OrderItems ;
+    }
+
+    this.getOrderTotal = function () {
+        return this.orderTotal;
+    }
+
+    this.setOrderTotal= function (_orderTotal) {
+        this.orderTotal = _orderTotal ;
     }
 }
